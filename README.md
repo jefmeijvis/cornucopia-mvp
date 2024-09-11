@@ -1,3 +1,2 @@
 # Cornucopia
-
-Cornucopia public repository for the website at [cornucopia.dotnetlab.eu](https://www.cornucopia.dotnetlab.eu)
+MVP for the OWASP Cornucopia website. Work in progress
