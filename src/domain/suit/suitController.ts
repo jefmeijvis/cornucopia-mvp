@@ -1,11 +1,13 @@
 import type { Suit } from "./suit";
 import { FileSystemHelper } from "$lib/filesystem/fileSystemHelper";
 import { getCardsBySuit } from "../card/cardController";
+import data from "../../lib/data";
 import { order } from "./order";
+import { SuiteContext } from "node:test";
 
 export function getSuits() : Suit[]
 {
-    let path : string = './data/cards/cornucopia-v1/';
+    let path : string = './data/cards/webapp-cards-1.22/';
     let directories = FileSystemHelper.getDirectories(path);
 
     let suits = new Array<Suit>();
@@ -22,6 +24,16 @@ export function getSuits() : Suit[]
     }
 
     return suits.sort(orderFunction);
+}
+
+export function getSuitNameByCardId(id: string) : string
+{
+    const suit = data.suits.filter((suit) => {
+        const card = suit.cards.filter(card => card.id == id)
+        if (card != undefined && card.length > 0) return true;
+        return false;
+    })
+    return suit[0]?.name;
 }
 
 function orderFunction(a : Suit, b : Suit) : number
