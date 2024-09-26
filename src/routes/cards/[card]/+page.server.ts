@@ -1,14 +1,16 @@
+import Card from "$lib/components/deck/card.svelte";
 import { FileSystemHelper } from "$lib/filesystem/fileSystemHelper";
-import {
-  getCardById,
-  getCardsFlat,
-} from "../../../domain/card/cardController";
+import { DeckService } from "$lib/services/deckService";
+import request from "sync-request";
+import { CardController } from "../../../domain/card/cardController";
 import type { PageServerLoad } from "./$types";
 
 export const load = (({ params }) => {
   return {
-    card: getCardById(String(params.card).toUpperCase()),
-    cards: getCardsFlat(),
+    card: (new CardController((new DeckService(request)).getCards('webapp', 'en'))).getCardById(String(params.card).toUpperCase()),
+    cards: (new CardController((new DeckService(request)).getCards('webapp', 'en'))).getCardsFlat(),
     ASVSRoutes: FileSystemHelper.ASVSRouteMap(),
+    cardData: (new DeckService(request)).getCards('webapp', 'en'),
+    mappingData: (new DeckService(request)).getCardMapping('webapp')
   };
 }) satisfies PageServerLoad;
