@@ -42,7 +42,7 @@
 <style>
     .mapping-title, .mapping-value
     {
-        font-size: .5rem;
+        font-size: max(.60vw,1vh);
         margin:0;
         margin-left: .25rem;
         margin-right: .25rem;
@@ -63,7 +63,7 @@
     {
         transform: rotate(90deg);
         text-orientation: mixed;
-        font-size: 1rem;
+        font-size: max(1.3vw, 3vh);
         padding-top: .70rem;
         font-weight: bold;
         padding-left: 1rem;
@@ -75,7 +75,7 @@
 
     .property-card-description
     {
-        font-size: .65rem;
+        font-size: max(.8vw, 1.5vh);
         padding: .25rem;
     }
     .property-card-number
@@ -84,7 +84,7 @@
         text-align: right;
         padding-right: .5rem;
         font-weight: bold;
-        font-size: 2rem;
+        font-size: max(3vw,5vh);
     }
     .card-render
     {
@@ -100,11 +100,6 @@
         border: 1px rgb(197, 197, 197) solid;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
         background-color: white;
-    }
-
-    .card-render:hover
-    {
-        filter: brightness(105%);
     }
 
     .left
