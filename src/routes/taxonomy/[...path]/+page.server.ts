@@ -2,7 +2,7 @@ import { FileSystemHelper } from "$lib/filesystem/fileSystemHelper.js";
 import fs from "fs";
 
 export async function load({ params }) {
-  let filePath: string = "./data/taxonomy/" + params.path;
+  let filePath: string = "./data/taxonomy-en/" + params.path;
   let [files, folders, content] = getDataFromPath(filePath);
 
   return {
@@ -29,7 +29,6 @@ function getDataFromPath(path: string) {
   let indexFile: string = path + "/index.md";
   if (fs.existsSync(indexFile)) content = fs.readFileSync(indexFile, "utf8");
   else {
-    //console.log('🍎 ' + indexFile + ' doesnt exist')
   }
   var parentdir = path.split("/").slice(0, -1).join("/");
   let disclaimerFile: string = parentdir + "/Disclaimer.md";

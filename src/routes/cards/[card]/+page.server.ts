@@ -2,19 +2,25 @@ import Card from "$lib/components/deck/card.svelte";
 import { FileSystemHelper } from "$lib/filesystem/fileSystemHelper";
 import { DeckService } from "$lib/services/deckService";
 import request from "sync-request";
-import { CardController } from "../../../domain/card/cardController";
 import type { PageServerLoad } from "./$types";
 
 export const load = (({ params }) => {
-  let deck = new DeckService(request).getCards('webapp', 'en');
-  
-  let cardController = new CardController(deck, 'webapp', '2.00');
-  let cardsFlat = cardController.getCardsFlat();
-  let card = cardController.getCardById(String(params.card).toUpperCase());
   return {
-    cards: cardsFlat,
-    card: card,
-    ASVSRoutes: FileSystemHelper.ASVSRouteMap(),
-    mappingData: (new DeckService(request)).getCardMapping('webapp')
+    card: legacyCardCodeFix(params.card.toUpperCase()),
+    decks: new DeckService(request).getCardsForAllLanguages(),
+    routes: new Map<string, Route[]>([
+      ['ASVSRoutes', FileSystemHelper.ASVSRouteMap()],
+      ['MASVSRoutes', FileSystemHelper.MASVSRouteMap()],
+      ['MASTGRoutes', FileSystemHelper.MASTGRouteMap()]
+    ]),
+    mappingData: (new DeckService(request)).getCardMapping()
   };
+
+  // Some QR code errors where done on the first printed decks. This will compensate for that.
+  function legacyCardCodeFix(card: string) {
+    return card.replace('COM', 'CM')
+      .replace('CO', 'C')
+      .replace('DVE', 'VE')
+      .replace('AC', 'AT');
+  }
 }) satisfies PageServerLoad;
