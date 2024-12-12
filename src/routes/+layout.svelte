@@ -1,4 +1,6 @@
-<script>
+<script lang="ts">
+    import { page } from "$app/stores";
+    import Breadcrumbs from "$lib/components/breadcrumbs.svelte";
     import CookieNotice from "$lib/components/cookieNotice.svelte";
     import Footer from "$lib/components/footer.svelte";
     import Metadata from "$lib/components/metadata.svelte";
@@ -7,28 +9,57 @@
     export let data;
     updateTranslation(data.translation, data.fallbackTranslation);
     updateLang(data.lang);
+
+    function getFullWidthPages(path : string)
+    {
+        console.log("getFullWidthPages")
+        // Add exceptions for page that need to be shown full page width
+        if(path == '/')
+            return true;
+
+        if(path == '/cards')
+            return true;
+
+        return false;
+    }
 </script>
 
 <Metadata></Metadata>
 <CookieNotice></CookieNotice>
 
-<div>
+<div class="page">
     <Navbar></Navbar>
-    <div class="slot-container">
+    <div class="slot-container" class:wide={getFullWidthPages($page.url.pathname)}>
+        <Breadcrumbs></Breadcrumbs>
         <slot></slot>
     </div>
     <Footer timestamp={data.timestamp}></Footer>
 </div>
 
 <style>
-    .slot-container
+    .page
     {
-        min-height: 100vh;
+        background-color:var(--background-color);
     }
 
-    div
+    .wide
     {
+        width: 100% !important;
+    }
+
+    .slot-container
+    {
+        width: 60%;
         min-height: 100vh;
-        background-color:var(--background-color);
+        margin : auto;
+        padding-bottom: 1rem;
+    }
+
+    @media (max-aspect-ratio: 1/1) 
+    {
+        .slot-container
+        {
+            width: 100%;
+        }
     }
 </style>

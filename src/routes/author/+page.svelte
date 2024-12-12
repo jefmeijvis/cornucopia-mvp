@@ -1,7 +1,5 @@
 <script>
     import Author from "$lib/components/author.svelte";
-import { Text } from "$lib/utils/text";
-
     export let data;
 </script>
 

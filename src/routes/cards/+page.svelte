@@ -229,7 +229,6 @@
 
     .tree
     {
-        padding : 1rem;
         width : 50%;
     }
 

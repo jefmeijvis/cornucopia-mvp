@@ -95,9 +95,6 @@
 
     div
     {
-        padding-left : 1rem;
-        width : 95%;
-        margin: auto;
         font-size: 1.2rem;
     }
 

@@ -2,7 +2,6 @@
     import CardVendor from '../../lib/components/cardVendor.svelte';
 </script>
 
-
 <div class="page-container">
     <h1>Web shop</h1>
     <p>
@@ -34,15 +33,12 @@
     .vendor-container
     {
         display:flex;
-        outline: 1xp red solid;
         justify-content: space-between;
         overflow: none;
     }
 
     .page-container
     {
-        padding : 2rem;
-        width : 60%;
         margin: auto;
         margin-top: 2rem;
         font-size: 1.2rem;
