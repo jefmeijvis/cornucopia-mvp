@@ -14,12 +14,12 @@
 
 <div class="card-render">
     <div class="left" style="background-color:{getSuitColor(card.suit)}">
-        <h1 class="property-card-suit">{card?.suitName}</h1>
+        <span class="property-card-suit">{card?.suitName}</span>
     </div>
     <div class="right">
         
         {#if mapping}
-        <h1 style="color:{getSuitColor(card.suit)}" class="property-card-number">{card?.card ?? card?.value}</h1>
+        <span style="color:{getSuitColor(card.suit)}" class="property-card-number">{card?.card ?? card?.value}</span>
         <p class="property-card-description">{card.desc}</p>
             {#if card.edition == 'webapp' && card.value != 'A' && card.value != 'B'}
                 <WebAppCardMapping {mapping}></WebAppCardMapping>
@@ -28,16 +28,22 @@
                 <MobileAppCardMapping {mapping}></MobileAppCardMapping>
             {/if}
         {:else if card.suitName == 'WILD CARD' }
-        <h1 style="color:{getSuitColor(card.suit)}" class="property-card-number">Joker</h1>
+        <span style="color:{getSuitColor(card.suit)}" class="property-card-number">Joker</span>
         <p class="property-card-description">{card.desc}</p>
         {:else}
-        <h1 style="color:{getSuitColor(card.suit)}" class="property-card-number">{card?.value}</h1>
+        <span style="color:{getSuitColor(card.suit)}" class="property-card-number">{card?.value}</span>
         <p class="property-card-description">{card.desc}</p>
         {/if}
     </div>
 </div>
 
 <style>
+
+    span
+    {
+        display: block;
+    }
+
     .property-card-suit
     {
         transform: rotate(90deg);

@@ -5,7 +5,6 @@
 </script>
 <div>
 <h1 id="taxonomy">Taxonomy</h1>
-<hr>
 {#each data.categories as category}
     <p>├──<a href="/taxonomy/{category}">{Text.Format(category)}</a></p>
 {/each}

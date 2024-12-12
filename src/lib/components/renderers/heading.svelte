@@ -58,13 +58,6 @@
       opacity: 70%;
     }
 
-    h1
-    {
-      background: var(--background);
-      padding: .5rem;
-      color:white;
-    }
-
     h2
     {
       background: var(--background);

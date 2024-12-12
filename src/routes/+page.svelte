@@ -17,7 +17,7 @@
 
 <Hero cards={data.cards} {suits} mapping={data.mappingData.get('webapp')}></Hero>
 <TextImage src="/images/cornucopia_logo_in_devs_we_trust.svg" align="right">
-    <h1 id="top">Introduction</h1>
+    <span id="top">Introduction</span>
     <p>
         The idea behind Cornucopia is to help development teams, especially those using Agile methodologies, to identify application security requirements and develop security-based user stories.
     </p>
@@ -29,7 +29,7 @@
     <a href="/about" class="internal-links">➔ Read more</a>
 </TextImage>
 <TextImage src="/images/cornucopia_logo_mobile_edition.svg" align="left">
-    <h1 id="top">How to start</h1>
+    <span id="top">How to start</span>
     <p>To start using Cornucopia:</p>
     <ol>
         <li><b>Either</b> obtain or buy a pre-printed deck of cards;</li>
@@ -45,7 +45,7 @@
     <a href="/how-to-play" class="internal-links">➔ How to play</a>
 </TextImage>
 <TextImage src="/images/opensource.png" align="right">
-    <h1>Open source</h1>
+    <span>Open source</span>
     <p>
         There are a large number of source design files for the cards themselves in various languages and formats.
         These design files together with the source code to generate the Word document, PDFs and InDesign files for printing are maintained in our <a rel="noopener" href="https://github.com/OWASP/cornucopia/releases/tag/v2.0.0">Github repository</a>.
@@ -57,12 +57,15 @@
 </TextImage>
 <Spacer></Spacer>
 <style>
-    h1
+    span
     {
+        display: block;
         color: var(--background);
         font-weight: bold;
         margin:0;
+        font-size: 3rem
     }
+    
 
     a,p,ol
     {

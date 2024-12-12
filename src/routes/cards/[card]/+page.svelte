@@ -45,7 +45,10 @@
   }
 </script>
 
-<p><a href="/cards">Back to overview</a></p>
+<p>
+  <a href="/cards">Back to overviews</a>
+</p>
+
 {#if cardFound()}
   <CardFound routes={data.routes} {cards} {card}  mappingData={data.mappingData.get(card.edition)} />
 {:else}
@@ -53,9 +56,9 @@
 {/if}
 
 <style>
-  a {
-    font-family: var(--font-title);
-    color: var(--white);
-    margin: 1rem;
+  p 
+  {
+    background-color: red;
+    font-family: var(--background);
   }
 </style>

@@ -6,7 +6,6 @@
 </script>
 <div>
 <h1>News</h1>
-<hr>
 <p>Wondering what's new with Cornucopia? This is the place to look!</p>
 
 {#if data.posts.length == 0}

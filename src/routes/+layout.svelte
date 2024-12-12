@@ -12,7 +12,6 @@
 
     function getFullWidthPages(path : string)
     {
-        console.log("getFullWidthPages")
         // Add exceptions for page that need to be shown full page width
         if(path == '/')
             return true;

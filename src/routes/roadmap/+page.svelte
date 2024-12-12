@@ -1,7 +1,6 @@
 <div class="content">
     <h1>Roadmap</h1>
     <section id="roadmap" class="page-body">
-        <hr>
         <h3 id="v2x">v2.x</h3>
         
         <p>Below is a preliminary summary of our wishes, dreams and aspirations for Cornucopia. If you have suggestions, ideas, please feel free to discuss them on our <a rel="noopener nofollow" href="https://groups.google.com/a/owasp.org/g/cornucopia-project">email list</a> or submit them to our <a rel="noopener nofollow" href="https://github.com/OWASP/cornucopia/issues">list of issues</a> in our repository. 
