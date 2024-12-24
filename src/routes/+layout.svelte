@@ -21,6 +21,9 @@
 
         return false;
     }
+    
+    let content = data.content.get(data.lang) || data.content.get('en');
+    console.log(content);
 </script>
 
 <Metadata></Metadata>
@@ -32,7 +35,7 @@
         <Breadcrumbs></Breadcrumbs>
         <slot></slot>
     </div>
-    <Footer timestamp={data.timestamp}></Footer>
+    <Footer timestamp={data.timestamp} {content}></Footer>
 </div>
 
 <style>
