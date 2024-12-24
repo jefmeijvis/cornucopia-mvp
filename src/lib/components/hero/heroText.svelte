@@ -1,5 +1,5 @@
 <div class="hero-text">
-    <h1>Cornucopia</h1>
+    <span>Cornucopia</span>
     <h3>OWASP Cyber security threat modeling game</h3>
     <img alt="OWASP Cornucopia" src="/images/cornucopia_logo_white.svg"/>
 </div>
@@ -35,7 +35,7 @@
         margin-top: 0;
     }
 
-    h1
+    span
     {
         font-size: max(10vw, 1vh);
         padding-top:8rem;

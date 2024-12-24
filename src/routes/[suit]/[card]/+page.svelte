@@ -39,8 +39,6 @@
 
 <style>
   a {
-    font-family: var(--font-title);
-    color: var(--white);
-    margin: 1rem;
+    font-family: var(--background);
   }
 </style>

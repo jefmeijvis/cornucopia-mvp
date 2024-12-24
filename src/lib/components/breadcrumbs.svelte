@@ -9,7 +9,7 @@
         parts = $page.url.pathname.split('/');
     }
 
-    function generateHref(index : number) : string
+    function generateHref(index : number, input : string) : string
     {
         let result = "";
         for(let i = 0 ; i < index + 1 ; i++)
@@ -19,7 +19,7 @@
         return result;
     }
 
-    function generateName(input : string)
+    function generateName(index : number, input : string)
     {
         if(input == '')
             return 'Home'
@@ -28,22 +28,26 @@
     }
 </script>
 
-<p id="breadcrumbs">
-    {#each parts as part,index}
-        {#if index != 0}
-            <span>> </span>
-        {/if}
-        <a href="{generateHref(index)}">{generateName(part)}</a>
-        <span> </span>
-    {/each}
-</p>
+{#if $page.url.pathname != '/'}
+    <p id="breadcrumbs">
+        {#each parts as part,index}
+            {#if index != 0}
+                <span>{'>'} </span>
+            {/if}
+            <a href="{generateHref(index,part)}">{generateName(index,part)}</a>
+            <span> </span>
+        {/each}
+    </p>
+{/if}
 
 <style>
     p
     {
+        padding-top: 1rem;
         font-size: 1.5rem;
         font-weight: bold;
         text-decoration: none;
+        margin:0;
     }
 
     a:hover

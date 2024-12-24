@@ -54,9 +54,9 @@
 {/if}
 
 <style>
-  a {
-    font-family: var(--font-title);
-    color: var(--white);
-    margin: 1rem;
+  p 
+  {
+    background-color: red;
+    font-family: var(--background);
   }
 </style>
