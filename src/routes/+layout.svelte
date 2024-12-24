@@ -15,10 +15,7 @@
         // Add exceptions for page that need to be shown full page width
         if(path == '/')
             return true;
-
-        if(path == '/cards')
-            return true;
-
+        
         return false;
     }
     
