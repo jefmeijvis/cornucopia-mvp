@@ -45,18 +45,20 @@
     return (cards_options.includes(String(card.id).toUpperCase()) && suits_options.includes(card.suitName.toLowerCase().replaceAll(' ', '-')))
   }
 </script>
-
-<p><a href="/cards">{$t('cards.card.p1')}</a></p>
+<div>
 {#if cardFound()}
   <CardFound routes={data.routes} {cards} {card}  mappingData={data.mappingData.get(card.edition)} />
 {:else}
   <CardNotFound {card} />
 {/if}
-
+</div>
 <style>
-  a {
-    font-family: var(--font-title);
-    color: var(--white);
-    margin: 1rem;
-  }
+    @media (max-aspect-ratio: 1/1) 
+    {
+        div
+        {
+            margin: 0rem 1rem;
+        }
+    }
+
 </style>

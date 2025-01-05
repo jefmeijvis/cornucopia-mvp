@@ -10,7 +10,7 @@
     const lang = readLang();
     let content = data.content.get($lang) || data.content.get('en');
 </script>
-
+<div>
 {#if content != ''}
 <SvelteMarkdown {renderers} source={content}></SvelteMarkdown>
 {/if}
@@ -40,7 +40,7 @@
         <a href="/author/{author.name}">{author.name}</a>
     </p>
 {/each}
-
+</div>
 <style>
     a
     {
@@ -98,19 +98,6 @@
         opacity: 70%;
     }
 
-    div
-    {
-        padding-left : 1rem;
-        width : 95%;
-        margin: auto;
-        font-size: 1.2rem;
-    }
-
-    p
-    {
-        font-size: 1.5rem;
-    }
-
     .list
     {
         padding-top: 1rem;
@@ -125,6 +112,10 @@
         button
         {
             width: calc(100% - 2rem);
+        }
+        div
+        {
+            margin: 0rem 1rem;
         }
     }
 </style>

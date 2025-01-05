@@ -7,46 +7,17 @@
     const lang = readLang();
     let content = data.content.get($lang) || data.content.get('en');
 </script>
+<div>
 {#if content != ''}
 <SvelteMarkdown {renderers} source={content}></SvelteMarkdown>
 {/if}
+</div>
 <style>
-    h2,h3
+    @media (max-aspect-ratio: 1/1)
     {
-        font-weight: bold;
-    }
-
-    div
-    {
-        padding-left : 1rem;
-        width : 95%;
-        margin: auto;
-        font-size: 1.2rem;
-    }
-        @media (max-aspect-ratio: 1/1)
+        div
         {
-            div
-            {
-                width : 100%;
-            }
+            margin: 0rem 1rem;
         }
-        a,p
-    {
-        font-size: 1.2rem;
-        font-family: var(--font-body);
-    }
-
-    a
-    {
-        display: inline-block;
-        text-decoration: none;
-        font-weight: bold;
-        color:var(--background);
-    }
-
-    a:hover
-    {
-        opacity: 70%;
-        color: rgb(41, 0, 176);
     }
 </style>

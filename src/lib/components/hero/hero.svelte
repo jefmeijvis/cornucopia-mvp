@@ -37,18 +37,18 @@
     .card-container
     {
         flex:1;
+        margin-top: 8vw;
     }
 
     .text-container
     {
         flex:1;
         z-index: 50;
-        width: 56%
+        width: 100%
     }
 
     .hero
     {
-        height : calc(160vh - 5rem);
         width : 100%;
     }
 
@@ -60,6 +60,12 @@
         {
             display: flex;
             flex-direction: column;
+            height: auto;
+        }
+
+        .card-container 
+        {
+            display: none;
         }
     }
 </style>

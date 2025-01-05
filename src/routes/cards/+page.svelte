@@ -1,4 +1,6 @@
 <script lang="ts">
+    import SvelteMarkdown from 'svelte-markdown';
+    import renderers from '$lib/components/renderers/renderers';
     import type { PageData } from "./$types";
     import CardPreview from "$lib/components/cardPreview.svelte";
     import {Text} from "$lib/utils/text.js"
@@ -10,6 +12,7 @@
     export let data: PageData;
     const lang = readLang();
     let t = readTranslation();
+    let content = data.content.get($lang) || data.content.get('en');
     let decks = data?.decks;
     let cards = decks?.get($lang);
     let suits = data.suits;
@@ -83,9 +86,11 @@
         mapping = (new MappingController(mappingData?.get(version))).getCardMappings(card.id);
     }
 </script>
+<div>
 <section id="decks">
-<h1>{$t('cards.h1')}</h1>
-<p class="text">{$t('cards.p1')}</p>
+{#if content != ''}
+<SvelteMarkdown {renderers} source={content}></SvelteMarkdown>
+{/if}
 <p class="button-container">
     <button class:button-selected={(version == VERSION_WEBAPP)} on:click={()=>changeVersion(VERSION_WEBAPP)}>{$t('cards.button.1')}</button>
     <button class:button-selected={version == VERSION_MOBILEAPP} on:click={()=>changeVersion(VERSION_MOBILEAPP)}>{$t('cards.button.2')}</button>
@@ -181,6 +186,7 @@
         </div>
     </div>
 </noscript>
+</div>
 <style>
     .button-container
     {
@@ -243,7 +249,7 @@
         font-weight: 400;
     }
 
-    h1,h2,h3
+    h2,h3
     {
         margin:0;
         cursor:pointer;
@@ -303,6 +309,11 @@
         button
         {
             width: 90%;
+        }
+
+        div
+        {
+            margin: 0rem 1rem;
         }
     }
 </style>
