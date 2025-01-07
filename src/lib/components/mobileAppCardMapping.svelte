@@ -41,6 +41,13 @@
         border-bottom: 1px rgb(192, 192, 192) solid;
     }
 
+    .mapping-title.browser-card-container, .mapping-value.browser-card-container
+    {
+        font-size: 0.7vw;
+        margin-left: 1vw;
+        margin-right: 1vw;
+    }
+
     @media (max-aspect-ratio: 1.5/1) 
     {
         .mapping-title.browser-card-container, .mapping-value.browser-card-container
