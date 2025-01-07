@@ -1,11 +1,18 @@
 <script lang="ts">
-    export let mapping : any;
-    export let style : string = '';
-    let mappingStyle = '';
+    interface Props {
+        mapping: any;
+        style?: string;
+    }
+
+    let { mapping, style }: Props = $props();
+
+    let mappingStyle = $state('');
 
     if (style) {
         mappingStyle = ' ' + style;
     }
+
+    
 
 </script>
         <p class="mapping-title{mappingStyle}">OWASP ASVS</p>

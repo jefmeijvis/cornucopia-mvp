@@ -4,8 +4,8 @@
     import { AddLink, type Link } from "./utils";
     import {readTranslation} from "$lib/stores/stores";
     let t = readTranslation();
-    let width: number;
-    let height: number;
+    let width: number = $state();
+    let height: number = $state();
 
     let mainMenu : Link[] = [];
     AddLink(mainMenu,$t('home.title'),"/");
@@ -39,12 +39,12 @@
                     <ul>
                         {#each [...mainMenu].reverse() as link}
                         <li>
-                            <button class="link-mobile" on:click={()=>{toggleMenu();goto(link.href)}}><span>{link.name}</span></button>
+                            <button class="link-mobile" onclick={()=>{toggleMenu();goto(link.href)}}><span>{link.name}</span></button>
                         </li>
                         {/each}
                         {#each [...subMenu].reverse() as link}
                         <li>
-                            <button class="link-mobile" on:click={()=>{toggleMenu();goto(link.href)}}><span>{link.name}</span></button>
+                            <button class="link-mobile" onclick={()=>{toggleMenu();goto(link.href)}}><span>{link.name}</span></button>
                         </li>
                         {/each}
                     </ul>

@@ -2,9 +2,13 @@
     import CardPreview from "../cardPreview.svelte";
     import type { Suit } from "../../../domain/suit/suit";
 
-    export let suits : Suit[];
-    export let cards : any;
-    export let mapping : any;
+    interface Props {
+        suits: Suit[];
+        cards: any;
+        mapping: any;
+    }
+
+    let { suits, cards, mapping }: Props = $props();
 
     // Manual selection of cards to display on the frontpage 
     let selectedCards : string[] =  ["JOA","C7","CR6","AZ5","SM4","VE3","AT2",]  

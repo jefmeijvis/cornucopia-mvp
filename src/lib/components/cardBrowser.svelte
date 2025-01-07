@@ -5,9 +5,13 @@
     import type { Card } from "../../domain/card/card";
     import { goto } from "$app/navigation";
     import { readTranslation } from "$lib/stores/stores";
-    export let card : Card;
-    export let cards : Map<string, Card>;
-    export let mappingData : any;
+    interface Props {
+        card: Card;
+        cards: Map<string, Card>;
+        mappingData: any;
+    }
+
+    let { card = $bindable(), cards, mappingData }: Props = $props();
     let t = readTranslation();
     let nextCard = cards.get(card.next);
     let previousCard = cards.get(card.prevous);
@@ -73,13 +77,13 @@
 </noscript>
 <div class="card-panel script" id="card">
     <div class="left">
-        <a href={getUrl(card)} on:click={goToPrevious(card)} class="arrow" title="{$t('cards.cardBrowser.a1.title')}">{"<"}</a>
+        <a href={getUrl(card)} onclick={()=>goToPrevious(card)} class="arrow" title="{$t('cards.cardBrowser.a1.title')}">{"<"}</a>
     </div>
     <div class="center">
         <CardPreview bind:card={card} mapping={mappingData} style='browser-card-container'></CardPreview>
     </div>
     <div class="right">
-        <a href={getUrl(card)} on:click={goToNext(card)} class="arrow" title="{$t('cards.cardBrowser.a2.title')}">{">"}</a>
+        <a href={getUrl(card)} onclick={()=>goToNext(card)} class="arrow" title="{$t('cards.cardBrowser.a2.title')}">{">"}</a>
     </div>
 </div>
 <style>
@@ -93,7 +97,7 @@
 
     .arrow:hover
     {
-        opacity: 50%;;
+        opacity: 50%;
     }
 
     .left,.right

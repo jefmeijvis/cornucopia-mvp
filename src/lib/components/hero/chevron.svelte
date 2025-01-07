@@ -1,6 +1,10 @@
 <script lang="ts">
-    export let href: string;
-    export let style : string = "";
+    interface Props {
+        href: string;
+        style?: string;
+    }
+
+    let { href, style = "" }: Props = $props();
 </script>
 <div id="chevron">
     <a href="{href}"><img {style} alt="go-down" src="icons/chevron.png"/></a>
@@ -25,7 +29,7 @@
         transition: var(--transition);
         filter:invert();
         z-index: 99;
-;    }
+    }
 
      img {
         width : 10vw;

@@ -3,11 +3,15 @@
     import renderers from '$lib/components/renderers/renderers';
     import SvelteMarkdown from "svelte-markdown";
 
-    export let timestamp : Date;
 
-    export let content;
+    interface Props {
+        timestamp: Date;
+        content: any;
+    }
+
+    let { timestamp, content }: Props = $props();
     let source = content;
-    let timeAgo : string = '';
+    let timeAgo : string = $state('');
 
     function doOnMount()
     {
