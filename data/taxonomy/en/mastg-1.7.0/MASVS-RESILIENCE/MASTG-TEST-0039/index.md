@@ -1,6 +1,6 @@
-#  MASTG-TEST-0039
+##  MASTG-TEST-0039
 
-## Testing whether the App is Debuggable
+### Testing whether the App is Debuggable
 
 Verify that the production build is not debuggable.
 

@@ -1,6 +1,6 @@
-#  MASTG-TEST-0044
+##  MASTG-TEST-0044
 
-## Make Sure That Free Security Features Are Activated
+### Make Sure That Free Security Features Are Activated
 
 Verify that the app has PIE and stack smashing protections enabled.
 

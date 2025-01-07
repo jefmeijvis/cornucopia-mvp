@@ -1,6 +1,6 @@
-#  MASTG-TEST-0010
+##  MASTG-TEST-0010
 
-## Finding Sensitive Information in Auto-Generated Screenshots
+### Finding Sensitive Information in Auto-Generated Screenshots
 
 Verify that auto-generated screenshots do not leak sensitive information.
 

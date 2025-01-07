@@ -1,6 +1,6 @@
-#  MASTG-TEST-0040
+##  MASTG-TEST-0040
 
-## Testing for Debugging Symbols
+### Testing for Debugging Symbols
 
 Verify that unnecessary metadata can't be disclosed by dumping debug symbols while the app is running.
 

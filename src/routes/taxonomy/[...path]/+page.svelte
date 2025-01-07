@@ -6,21 +6,22 @@
     import ViewSourceOnGithub from "$lib/components/viewSourceOnGithub.svelte"
     import Utterances from "$lib/components/utterances.svelte"
 </script>
+<h1 class="clickable" id="{data.title}">{Text.FormatPlain(data.title)}</h1>
 <div>
 <!--The location is a file -->
 {#each data.files as file}
-    <p>├──<a href="/taxonomy/{data.path}/{file}">{Text.Format(file)}</a></p>
+    <p>├──<a href="/taxonomy/{data.path}/{file}">{Text.FormatPlain(file)}</a></p>
 {/each}
 
 <!--The location is a folder -->
 {#each data.folders as folder}
-    <p>├──<a href="/taxonomy/{data.path}/{folder}">{Text.Format(folder)}</a></p>
+    <p>├──<a href="/taxonomy/{data.path}/{folder}">{Text.FormatPlain(folder)}</a></p>
 {/each}
 
 <!--The location is filecontent -->
 {#if data.content && data.content != ''}
     <SvelteMarkdown {renderers} source={data.content}></SvelteMarkdown>
-    <ViewSourceOnGithub path={'./data/taxonomy/' + data.path + '/index.md'} ></ViewSourceOnGithub>
+    <ViewSourceOnGithub path={'./data/Taxonomy/' + data.path + '/index.md'} ></ViewSourceOnGithub>
     <Utterances name={data.path} ></Utterances>
 {/if}
 </div>
@@ -38,6 +39,17 @@
         transition: var(--transition);
     }
 
+    h1
+    {
+        font-weight: bolder;
+    }
+    .clickable:hover
+    {
+        opacity: 70%;
+        cursor: pointer;
+    }
+    
+
     a:hover
     {
         opacity:50%;
@@ -49,4 +61,5 @@
             margin: 0rem 1rem;
         }
     }
+    
 </style>

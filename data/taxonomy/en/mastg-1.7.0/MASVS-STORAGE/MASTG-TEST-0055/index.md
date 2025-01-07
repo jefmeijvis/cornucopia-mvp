@@ -1,6 +1,6 @@
-#  MASTG-TEST-0055
+##  MASTG-TEST-0055
 
-## Finding Sensitive Data in the Keyboard Cache
+### Finding Sensitive Data in the Keyboard Cache
 
 Verify that the keyboard cache is disabled or restricted and timely cleared when dealing with sensitive input fields.
 

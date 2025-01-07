@@ -1,14 +1,14 @@
-# Confused deputy attack
+## Confused deputy attack
 
 If a legitimate application requests dangerous permissions and then exposes a feature that uses that dangerous permission to the system, it allows any other application installed on the device to enjoy the permission without the need of requesting it. Let's say that a developer accidently left the permission `android.permission.BIND_NOTIFICATION_LISTENER_SERVICE` in an application release build and exposed that permission to other apps on the system. It is used to intercept all the notifications received by the system. This means the malware can read all notifications, modify them before sending to the user or even reply to them if needed even if it does not have the `BIND_NOTIFICATION_LISTENER_SERVICE` permission. This is known as the confused deputy problem.
 
 In this example, the application is the deputy because it is acting at the request of the user. The application is seen as 'confused' because it was tricked into making a request on behalf of a malicious application.
 
-## Example
+### Example
 
 In 2019 the Google and Samsung Camera app was identified as vulnerable to the "Confused deputy attack". The applications exposed an unprotected feature that allowed another application to take pictures or videos through the Camera application.
 
-## Links
+### Links
 
 - [How Attackers Could Hijack Your Android Camera to Spy on You](https://checkmarx.com/blog/how-attackers-could-hijack-your-android-camera/)
 - [CWE-441: Unintended Proxy or Intermediary ('Confused Deputy')](https://cwe.mitre.org/data/definitions/441.html)
@@ -23,6 +23,6 @@ In 2019 the Google and Samsung Camera app was identified as vulnerable to the "C
 - [Apple: Diagnosing Issues with Entitlements](https://developer.apple.com/documentation/bundleresources/entitlements/diagnosing_issues_with_entitlements)
 - [Apple: Security of runtime process in iOS and iPadOS](https://help.apple.com/pdf/security/en_US/apple-platform-security-guide.pdf)
 
-## Cards
-### Authentication & Authorization
+### Cards
+#### Authentication & Authorization
 - [Authentication & Authorization 3](/cards/AA3)

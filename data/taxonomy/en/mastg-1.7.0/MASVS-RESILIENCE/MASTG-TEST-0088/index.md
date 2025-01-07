@@ -1,6 +1,6 @@
-#  MASTG-TEST-0088
+##  MASTG-TEST-0088
 
-## Testing Jailbreak Detection
+### Testing Jailbreak Detection
 
 Verify that jailbreak detection is strong enough according to what is recommended or the perceived effort of a potential attacker to mitigate against the risk of sensitive data exfiltration.
 

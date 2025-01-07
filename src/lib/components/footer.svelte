@@ -51,20 +51,6 @@
                 <SvelteMarkdown {renderers} {source}></SvelteMarkdown>
             {/if}
         </div>
-        <div class="box">
-            <p class="title">Get the cards</p>
-            <p><a href="/webshop">Order online</a></p>
-            <p><a href="/printing">Print your own</a></p>
-        </div>
-
-        <div class="box">
-            <p class="title">Mappings</p>
-            <p><a rel="noopener" href="https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/">OWASP SCP</a></p>
-            <p><a rel="noopener" href="https://owasp.org/www-project-application-security-verification-standard/">OWASP ASVS</a></p>
-            <p><a rel="noopener" href="https://owasp.org/www-project-appsensor/">OWASP APPSENSOR</a></p>
-            <p><a rel="noopener nofollow" href="https://capec.mitre.org/">CAPEC</a></p>
-            <p><a rel="noopener nofollow" href="https://safecode.org/">SAFECODE</a></p>
-        </div>
     </div>
     <p class="footer">OWASP and the OWASP logo are trademarks of the <a rel="noopener" href="https://owasp.org/">OWASP Foundation</a></p>
     <p class="footer">Last update was {getCurrentDate()}{timeAgo}</p>

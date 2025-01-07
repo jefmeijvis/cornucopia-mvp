@@ -1,6 +1,6 @@
-#  MASTG-TEST-0072
+##  MASTG-TEST-0072
 
-## Testing App Extensions
+### Testing App Extensions
 
 Verify that the app restricts the use of app extensions appropritely.
 

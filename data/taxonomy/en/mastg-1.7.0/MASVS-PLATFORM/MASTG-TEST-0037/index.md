@@ -1,6 +1,6 @@
-#  MASTG-TEST-0037
+##  MASTG-TEST-0037
 
-## Testing WebViews Cleanup
+### Testing WebViews Cleanup
 
 Verify that the WebView cleans up sensitive data after use.
 

@@ -1,6 +1,6 @@
-#  MASTG-TEST-0053
+##  MASTG-TEST-0053
 
-## Checking Logs for Sensitive Data
+### Checking Logs for Sensitive Data
 
 Verify that the app doesn't leak sensitive data through logs.
 

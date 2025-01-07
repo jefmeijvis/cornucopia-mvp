@@ -1,6 +1,6 @@
-#  MASTG-TEST-0005
+##  MASTG-TEST-0005
 
-## Determining Whether Sensitive Data Is Shared with Third Parties via Notifications
+### Determining Whether Sensitive Data Is Shared with Third Parties via Notifications
 
 Verify that sensitive data isn't leaked through notifications.
 

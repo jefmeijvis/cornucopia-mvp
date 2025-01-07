@@ -1,6 +1,6 @@
-#  MASTG-TEST-0052
+##  MASTG-TEST-0052
 
-## Testing Local Data Storage
+### Testing Local Data Storage
 
 Verify that the app doesn't leak sensitive data from local, internal/external storage, databases or shared preferences.
 

@@ -1,6 +1,6 @@
-#  MASTG-TEST-0081
+##  MASTG-TEST-0081
 
-## Making Sure that the App Is Properly Signed
+### Making Sure that the App Is Properly Signed
 
 Ensure that the release builds are properly signed to safeguard their integrity and protect them from tampering.
 

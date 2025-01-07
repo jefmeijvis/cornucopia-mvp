@@ -1,6 +1,6 @@
-#  MASTG-TEST-0026
+##  MASTG-TEST-0026
 
-## Testing Implicit Intents
+### Testing Implicit Intents
 
 Verify that implicit intents are not vulnerable to injection attacks or are leaking sensitive data. 
 

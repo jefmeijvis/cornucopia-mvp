@@ -1,6 +1,6 @@
-#  MASTG-TEST-0034
+##  MASTG-TEST-0034
 
-## Testing Object Persistence
+### Testing Object Persistence
 
 Verify stored sensitive data is properly protected against information disclosure or tampering (e.g: through instrumentation or reverse engineering).
 

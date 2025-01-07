@@ -1,6 +1,6 @@
-#  MASTG-TEST-0033
+##  MASTG-TEST-0033
 
-## Testing for Java Objects Exposed Through WebViews
+### Testing for Java Objects Exposed Through WebViews
 
 Determine whether WebViews have JavaScript enabled and whether the WebView is creating any JavaScript interfaces aka. "JavaScript Bridges". Finally, verify whether an attacker could potentially inject malicious JavaScript code.
 

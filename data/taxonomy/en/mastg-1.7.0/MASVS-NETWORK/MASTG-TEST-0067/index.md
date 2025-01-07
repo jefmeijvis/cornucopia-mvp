@@ -1,6 +1,6 @@
-#  MASTG-TEST-0067
+##  MASTG-TEST-0067
 
-## Testing Endpoint Identity Verification
+### Testing Endpoint Identity Verification
 
 Verify that ATS is not disabled, that a certificate comes from a trusted source, i.e. CA (Certificate Authority) and that hostnames and certificates are verified correctly.
 

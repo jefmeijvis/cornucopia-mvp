@@ -1,6 +1,6 @@
-#  MASTG-TEST-0008
+##  MASTG-TEST-0008
 
-## Checking for Sensitive Data Disclosure Through the User Interface
+### Checking for Sensitive Data Disclosure Through the User Interface
 
 Verify that sensitive data entered through the user interface is properly masked and that it's not excessive.
 

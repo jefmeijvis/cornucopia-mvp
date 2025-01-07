@@ -1,6 +1,6 @@
-#  MASTG-TEST-0070
+##  MASTG-TEST-0070
 
-## Testing Universal Links
+### Testing Universal Links
 
 Verify that all universal links are enumerated in the app entitlements and verified for correct domain association. Actions they perform must be tested and input data validated and sanitized. Malformed URLs should be discarded.
 

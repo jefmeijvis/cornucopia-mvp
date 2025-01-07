@@ -3,9 +3,9 @@ date: 20240314
 author: ive-verstappen
 tags: owasp-top10, Agile
 hidden: false
-description: Implement the OWASP top 10 guidelines by playing the Cornucopia cardgame - in numbers
+description: Implement the OWASP Top 10 guidelines by playing the Cornucopia cardgame - in numbers
 ---
-# HOW TO Implement the OWASP top 10 guidelines by playing the Cornucopia cardgame - in numbers
+# HOW TO Implement the OWASP Top 10 guidelines by playing the Cornucopia cardgame - in numbers
 
 The OWASP Top 10 list is an excellent guide for the start of an Application Security improvement program of a software development team.  However, what we see is that lots of software development teams who don't have access to a dedicated security professional (or team) struggle to correctly implement the OWASP Top 10 guides.
 
@@ -18,7 +18,7 @@ The OWASP community collects data about the most important weaknesses identified
 
 Each number in the top 10 is a category.  That means that if you dig down into 01-Broken Access Controls, you will find several CWE-ID's.  These CWE-ID's can then be linked back to several defensive secure development techniques.
 
-Gaining an in-depth understanding about how to correctly tackle one OWASP top 10 category can be daunting.  That is why, for most development teams, it is preferable to use the TOP 10 categories only as a tool to prioritize their defensive actions.  Here is where playing cornucopia comes in.
+Gaining an in-depth understanding about how to correctly tackle one OWASP Top 10 category can be daunting.  That is why, for most development teams, it is preferable to use the TOP 10 categories only as a tool to prioritize their defensive actions.  Here is where playing cornucopia comes in.
 
 ### Playing cornucopia provides actionable non-functional requirements
 Thanks to the relationship between OWASP Cornucopia, OWASP ASVS and the Common Weakness Enumeration, Playing Cornucopia provides actionable and tangible Non-Functional Requirements which a team can easily integrate into its Product Backlog.  The team identifies these Requirements in a collaborative fashion and can prioritize them together.

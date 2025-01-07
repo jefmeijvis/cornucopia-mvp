@@ -1,5 +1,5 @@
-# Cryptographic failures
-## Description
+## Cryptographic failures
+### Description
 The first thing is to determine the protection needs of data in transit and at rest. For example, passwords, credit card numbers, health records, personal information, and business secrets require extra protection, mainly if that data falls under privacy laws, e.g., EU's General Data Protection Regulation (GDPR), or regulations, e.g., financial data protection such as PCI Data Security Standard (PCI DSS). For all such data:
 
 - Is any data transmitted in clear text? This concerns protocols such as HTTP, SMTP, FTP also using TLS upgrades like STARTTLS. External internet traffic is hazardous. Verify all internal traffic, e.g., between load balancers, web servers, or back-end systems.
@@ -14,7 +14,7 @@ The first thing is to determine the protection needs of data in transit and at r
 - Are deprecated cryptographic padding methods such as PKCS number 1 v1.5 in use?
 - Are cryptographic error messages or side channel information exploitable, for example in the form of padding oracle attacks?
 
-## How to Prevent
+### How to Prevent
 - Classify data processed, stored, or transmitted by an application. Identify which data is sensitive according to privacy laws, regulatory requirements, or business needs.
 - Don't store sensitive data unnecessarily. Discard it as soon as possible or use PCI DSS compliant tokenization or even truncation. Data that is not retained cannot be stolen.
 - Make sure to encrypt all sensitive data at rest.
@@ -33,28 +33,28 @@ The first thing is to determine the protection needs of data in transit and at r
 
 [Source: OWASP TOP 10 Cryptographic failures](https://owasp.org/Top10/A02_2021-Cryptographic_Failures/)
 
-## Cheatsheets
+### Cheatsheets
 [Cryptographic failures Cheatcheats](https://cheatsheetseries.owasp.org/IndexTopTen.html#a022021-cryptographic-failures)
 
-## Cards
-### Authentication
+### Cards
+#### Authentication
 - [Authentication 3](/cards/AT3)
 - [Authentication 4](/cards/AT4)
 - [Authentication 5](/cards/AT5)
 - [Authentication 6](/cards/AT6)
 - [Authentication 7](/cards/AT7)
 
-### Session-management
+#### Session-management
 - [Session-management 2](/cards/SM2)
 - [Session-management 3](/cards/SM3)
 - [Session-management 5](/cards/SM5)
 - [Session-management 9](/cards/SM9)
 
-### Authorization
+#### Authorization
 - [Authorization 3](/cards/AZ3)
 - [Authorization 8](/cards/AZ8)
 
-### Cryptography
+#### Cryptography
 - [Cryptography 2](/cards/CR2)
 - [Cryptography 3](/cards/CR3)
 - [Cryptography 4](/cards/CR4)

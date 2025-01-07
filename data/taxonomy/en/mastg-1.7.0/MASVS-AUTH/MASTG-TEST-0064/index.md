@@ -1,6 +1,6 @@
-#  MASTG-TEST-0064
+##  MASTG-TEST-0064
 
-## Testing Local Authentication
+### Testing Local Authentication
 
 Verify that local authentication can't be bypassed through patching and/or instrumentation.
 

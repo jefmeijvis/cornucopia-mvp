@@ -1,6 +1,6 @@
-#  MASTG-TEST-0035
+##  MASTG-TEST-0035
 
-## Testing for Overlay Attacks
+### Testing for Overlay Attacks
 
 Verify that the app is taking appropriate measures to mitigate against overlay attacks, e.g. tapjacking.
 

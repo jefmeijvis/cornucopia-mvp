@@ -64,7 +64,7 @@
             <a href={card.prevous + '/#card'} class="arrow" title="{$t('cards.cardBrowser.a1.title')}">{"<"}</a>
         </div>
         <div class="center">
-            <CardPreview bind:card={card} mapping={mappingData}></CardPreview>
+            <CardPreview bind:card={card} mapping={mappingData} style='browser-card-container'></CardPreview>
         </div>
         <div class="right">
             <a href={card.next + '/#card'} class="arrow" title="{$t('cards.cardBrowser.a2.title')}">{">"}</a>
@@ -76,7 +76,7 @@
         <a href={getUrl(card)} on:click={goToPrevious(card)} class="arrow" title="{$t('cards.cardBrowser.a1.title')}">{"<"}</a>
     </div>
     <div class="center">
-        <CardPreview bind:card={card} mapping={mappingData}></CardPreview>
+        <CardPreview bind:card={card} mapping={mappingData} style='browser-card-container'></CardPreview>
     </div>
     <div class="right">
         <a href={getUrl(card)} on:click={goToNext(card)} class="arrow" title="{$t('cards.cardBrowser.a2.title')}">{">"}</a>
@@ -98,8 +98,8 @@
 
     .left,.right
     {
-        min-width: 5rem;
-        font-size: 5rem;
+        min-width: 5vw;
+        font-size: 5vw;
         cursor:pointer;
         text-align: center;
         transform: translate(0,10rem);
@@ -120,7 +120,7 @@
         justify-content: center;
     }
 
-    @media (max-aspect-ratio: 1/1) 
+    @media (max-aspect-ratio: 1.5/1) 
     {
         .center
         {
@@ -130,7 +130,6 @@
         .left,.right
         {
             padding-top: 60%;
-            font-size: 2rem;
             width : 15vw;
         }
     }

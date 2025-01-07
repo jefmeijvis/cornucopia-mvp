@@ -1,12 +1,12 @@
-# Local authentication bypass
+## Local authentication bypass
 
 Local authentication bypass involves bypassing authentication, either because it's not implemented, through instrumentation by using a instrumentation tool like Frida to trick the app into exposing credentials or believing that authentication has happened, or by forcing the app to throw an error that leaves the app unlocked.
 
-## Example
+### Example
 
 The Norton App Lock prior to version 1.3.0.13 was susceptible to an authentication bypass exploit [(CVE-2017-15534)](https://nvd.nist.gov/vuln/detail/CVE-2017-15534). The exploit allowed a user to kill the app to prevent it from locking the device, thereby allowing the individual to gain device access.
 
-## Links
+### Links
 
 - [CVE-2017-15534 - The Norton App Lock exploit](https://nvd.nist.gov/vuln/detail/CVE-2017-15534)
 - [CAPEC-115: Authentication Bypass](https://capec.mitre.org/data/definitions/115.html)
@@ -21,6 +21,6 @@ The Norton App Lock prior to version 1.3.0.13 was susceptible to an authenticati
 - [Apple: Local authentication](https://developer.apple.com/documentation/localauthentication)
 - [Android: Local authentication](https://developer.android.com/security/fraud-prevention/authentication)
 
-## Cards
-### Authentication & Authorization
+### Cards
+#### Authentication & Authorization
 - [Authentication & Authorization 2](/cards/AA2)

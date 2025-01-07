@@ -1,6 +1,6 @@
-#  MASTG-TEST-0012
+##  MASTG-TEST-0012
 
-## Testing the Device-Access-Security Policy
+### Testing the Device-Access-Security Policy
 
 Verify that Device-Access-Security policies are appropriately enforced to mitigate the risk of data exfiltration from stolen or decommissioned devices.
 

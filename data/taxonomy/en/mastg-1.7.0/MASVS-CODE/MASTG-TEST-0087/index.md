@@ -1,6 +1,6 @@
-#  MASTG-TEST-0087
+##  MASTG-TEST-0087
 
-## Make Sure That Free Security Features Are Activated
+### Make Sure That Free Security Features Are Activated
 
 Verify that the app has PIE and stack canary and ARC enabled.
 

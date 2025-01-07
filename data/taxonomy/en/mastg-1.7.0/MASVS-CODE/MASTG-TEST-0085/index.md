@@ -1,6 +1,6 @@
-#  MASTG-TEST-0085
+##  MASTG-TEST-0085
 
-## Checking for Weaknesses in Third Party Libraries
+### Checking for Weaknesses in Third Party Libraries
 
 Verify that the app does not contain weaknesses in third party dependencies.
 

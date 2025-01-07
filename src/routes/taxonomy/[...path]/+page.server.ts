@@ -2,14 +2,20 @@ import { FileSystemHelper } from "$lib/filesystem/fileSystemHelper.js";
 import fs from "fs";
 
 export async function load({ params }) {
-  let filePath: string = "./data/taxonomy/en/" + params.path;
+  let filePath: string = "./data/Taxonomy/en/" + params.path;
   let [files, folders, content] = getDataFromPath(filePath);
+
+  let parts = params.path.split('/');
+  let title = '';
+  if (parts.length > 0) title = parts[0];
+  if (parts.length > 1) title = parts[1];
 
   return {
     files: files,
     folders: folders,
     content: content,
     path: params.path,
+    title: title,
     timestamp: new Date().toUTCString(),
   };
 }

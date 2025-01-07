@@ -1,6 +1,6 @@
-#  MASTG-TEST-0030
+##  MASTG-TEST-0030
 
-## Testing for Vulnerable Implementation of PendingIntent
+### Testing for Vulnerable Implementation of PendingIntent
 
 Verify that PendingIntents are properly sanitized and immutable and that the app explicitly specifies the exact package, action, and component that will receive the base intent.
 

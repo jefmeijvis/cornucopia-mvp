@@ -1,6 +1,6 @@
-#  MASTG-TEST-0050
+##  MASTG-TEST-0050
 
-## Testing Runtime Integrity Checks
+### Testing Runtime Integrity Checks
 
 Verify that the runtime integrity checks are strong enough according to what is recommended or the perceived effort of a potential attacker to mitigate the risk of having critical and sensitive functionality patched out.
 

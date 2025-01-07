@@ -1,6 +1,6 @@
-#  MASTG-TEST-0024
+##  MASTG-TEST-0024
 
-## Testing for App Permissions
+### Testing for App Permissions
 
 Verify that platform permissions are appropriately set, narrow enough and enforced by the app manifest.
 

@@ -1,5 +1,5 @@
-# Injection
-## Description
+## Injection
+### Description
 An application is vulnerable to attack when:
 
 - User-supplied data is not validated, filtered, or sanitized by the application.
@@ -9,7 +9,7 @@ An application is vulnerable to attack when:
 
 Some of the more common injections are SQL, NoSQL, OS command, Object Relational Mapping (ORM), LDAP, and Expression Language (EL) or Object Graph Navigation Library (OGNL) injection. The concept is identical among all interpreters. Source code review is the best method of detecting if applications are vulnerable to injections. Automated testing of all parameters, headers, URL, cookies, JSON, SOAP, and XML data inputs is strongly encouraged. Organizations can include static (SAST), dynamic (DAST), and interactive (IAST) application security testing tools into the CI/CD pipeline to identify introduced injection flaws before production deployment.
 
-## How to Prevent
+### How to Prevent
 - The preferred option is to use a safe API, which avoids using the interpreter entirely, provides a parameterized interface, or migrates to Object Relational Mapping Tools (ORMs).
 Note: Even when parameterized, stored procedures can still introduce SQL injection if PL/SQL or T-SQL concatenates queries and data or executes hostile data with EXECUTE IMMEDIATE or exec().
 - Use positive server-side input validation. This is not a complete defense as many applications require special characters, such as text areas or APIs for mobile applications.
@@ -19,11 +19,11 @@ Note: SQL structures such as table names, column names, and so on cannot be esca
 
 [Source: OWASP TOP 10 Injection](https://owasp.org/Top10/A03_2021-Injection/)
 
-## Cheatsheets
+### Cheatsheets
 [Injection Cheatcheats](https://cheatsheetseries.owasp.org/IndexTopTen.html#a032021-injection)
 
-## Cards
-### Data-validation-&-encoding
+### Cards
+#### Data-validation-&-encoding
 - [Data-validation-&-encoding 2](/cards/VE2)
 - [Data-validation-&-encoding 3](/cards/VE3)
 - [Data-validation-&-encoding 4](/cards/VE4)
@@ -36,7 +36,7 @@ Note: SQL structures such as table names, column names, and so on cannot be esca
 - [Data-validation-&-encoding Q](/cards/VEQ)
 - [Data-validation-&-encoding K](/cards/VEK)
 
-### Authentication
+#### Authentication
 - [Authentication 2](/cards/AT2)
 - [Authentication 3](/cards/AT3)
 - [Authentication 4](/cards/AT4)
@@ -46,19 +46,19 @@ Note: SQL structures such as table names, column names, and so on cannot be esca
 - [Authentication Q](/cards/ATQ)
 - [Authentication K](/cards/ATK)
 
-### Session-management
+#### Session-management
 - [Session-management 2](/cards/SM2)
 
-### Authorization
+#### Authorization
 - [Authorization 2](/cards/AZ2)
 - [Authorization 3](/cards/AZ3)
 - [Authorization 8](/cards/AZ8)
 - [Authorization 9](/cards/AZ9)
 - [Authorization Q](/cards/AZQ)
 
-### Cryptography
+#### Cryptography
 - [Cryptography 8](/cards/CR8)
 
-### Cornucopia
+#### Cornucopia
 - [Cornucopia 3](/cards/C3)
 - [Cornucopia 5](/cards/C5)

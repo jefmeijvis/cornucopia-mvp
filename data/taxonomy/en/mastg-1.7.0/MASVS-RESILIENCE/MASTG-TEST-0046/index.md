@@ -1,6 +1,6 @@
-#  MASTG-TEST-0046
+##  MASTG-TEST-0046
 
-## Testing Anti-Debugging Detection
+### Testing Anti-Debugging Detection
 
 Verify that the app has debug detection and take appropriate measure to ensure the app isn't debuggable.
 

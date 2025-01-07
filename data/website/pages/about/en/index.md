@@ -10,7 +10,7 @@ If you have other questions, suggestions or ideas please feel free to discuss th
 
 he idea behind Cornucopia is to help development teams, especially those using Agile methodologies, to identify application security requirements and develop security-based user stories.
 Although the idea had been waiting for enough time to progress it, the final motivation came when [SAFECode](http://www.safecode.org/) published its [Practical Security Stories and Security Tasks for Agile Development Environments](https://safecode.org/publication/SAFECode_Agile_Dev_Security0712.pdf '[inline] SAFE Code publication as pdf') in July 2012.
-<br/>Cornucopia was created and first used for developer training in August 2012.
+Cornucopia was created and first used for developer training in August 2012.
 
 The Microsoft SDL team had already published its super [Elevation of Privilege: The Threat Modeling Game (EoP)](https://www.microsoft.com/en-gb/download/details.aspx?id=20303 'EoP publication at Microsoft. [external]') but that did not seem to address the most appropriate kind of issues that web application development teams mostly have to address.
 <br/>EoP is a great concept and game strategy and was [published](https://www.microsoft.com/security/blog/2010/03/02/announcing-elevation-of-privilege-the-threat-modeling-game/ 'Microsoft announcing EoP on their blog. [external]') under a [Creative Commons Attribution License](http://creativecommons.org/licenses/by/3.0/ 'Link to the CC BY 3.0 Attribution Unported License [external]').

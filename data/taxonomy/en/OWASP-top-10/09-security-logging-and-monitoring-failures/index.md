@@ -1,5 +1,5 @@
-# Security Logging and Monitoring Failures
-## Description
+## Security Logging and Monitoring Failures
+### Description
 Returning to the OWASP Top 10 2021, this category is to help detect, escalate, and respond to active breaches. Without logging and monitoring, breaches cannot be detected. Insufficient logging, detection, monitoring, and active response occurs any time:
 
 - Auditable events, such as logins, failed logins, and high-value transactions, are not logged.
@@ -12,7 +12,7 @@ Returning to the OWASP Top 10 2021, this category is to help detect, escalate, a
 
 You are vulnerable to information leakage by making logging and alerting events visible to a user or an attacker (see A01:2021-Broken Access Control).
 
-## How to Prevent
+### How to Prevent
 Developers should implement some or all the following controls, depending on the risk of the application:
 
 - Ensure all login, access control, and server-side input validation failures can be logged with sufficient user context to identify suspicious or malicious accounts and held for enough time to allow delayed forensic analysis.
@@ -26,23 +26,23 @@ There are commercial and open-source application protection frameworks such as t
 
 [Source: OWASP TOP 10 Security Logging and Monitoring Failures](https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/)
 
-## Cheatsheets
+### Cheatsheets
 [Security Logging and Monitoring Failures Cheatcheats](https://cheatsheetseries.owasp.org/IndexTopTen.html#a092021-security-logging-and-monitoring-failures)
 
-## Cards
-### Data-validation-&-encoding
+### Cards
+#### Data-validation-&-encoding
 - [Data-validation-&-encoding 3](/cards/VE3)
 - [Data-validation-&-encoding 4](/cards/VE4)
 
-### Authentication
+#### Authentication
 - [Authentication 3](/cards/AT3)
 
-### Authorization
+#### Authorization
 - [Authorization 9](/cards/AZ9)
 
 
 
-### Cornucopia
+#### Cornucopia
 - [Cornucopia 2](/cards/C2)
 - [Cornucopia 4](/cards/C4)
 - [Cornucopia 7](/cards/C7)

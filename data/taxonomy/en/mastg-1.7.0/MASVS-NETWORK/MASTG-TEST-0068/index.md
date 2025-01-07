@@ -1,6 +1,6 @@
-#  MASTG-TEST-0068
+##  MASTG-TEST-0068
 
-## Testing Custom Certificate Stores and Certificate Pinning
+### Testing Custom Certificate Stores and Certificate Pinning
 
 Verify whether certificate pinning and/or mTLS is implemented correctly if used.
 

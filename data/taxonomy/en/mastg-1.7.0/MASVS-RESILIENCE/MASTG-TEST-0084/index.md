@@ -1,6 +1,6 @@
-#  MASTG-TEST-0084
+##  MASTG-TEST-0084
 
-## Testing for Debugging Code and Verbose Error Logging
+### Testing for Debugging Code and Verbose Error Logging
 
 Verify that the app does not have verbose debug or error statements present in the release version.
 

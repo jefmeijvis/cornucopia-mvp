@@ -1,5 +1,5 @@
-# Vulnerable and Outdated Components
-## Description
+## Vulnerable and Outdated Components
+### Description
 You are likely vulnerable:
 
 - If you do not know the versions of all components you use (both client-side and server-side). This includes components you directly use as well as nested dependencies.
@@ -9,7 +9,7 @@ You are likely vulnerable:
 - If software developers do not test the compatibility of updated, upgraded, or patched libraries.
 - If you do not secure the components’ configurations (see A05:2021-Security Misconfiguration).
 
-## How to Prevent
+### How to Prevent
 There should be a patch management process in place to:
 
 - Remove unused dependencies, unnecessary features, components, files, and documentation.
@@ -21,25 +21,25 @@ Every organization must ensure an ongoing plan for monitoring, triaging, and app
 
 [Source: OWASP TOP 10 Vulnerable and Outdated Components](https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/)
 
-## Cheatsheets
+### Cheatsheets
 [Vulnerable and Outdated Components Cheatcheats](https://cheatsheetseries.owasp.org/IndexTopTen.html#a062021-vulnerable-and-outdated-components)
 
-## Cards
-### Data-validation-&-encoding
+### Cards
+#### Data-validation-&-encoding
 - [Data-validation-&-encoding 2](/cards/VE2)
 
-### Authentication
+#### Authentication
 - [Authentication 9](/cards/AT9)
 
-### Authorization
+#### Authorization
 - [Authorization 8](/cards/AZ8)
 - [Authorization 9](/cards/AZ9)
 
-### Cryptography
+#### Cryptography
 - [Cryptography 7](/cards/CR7)
 - [Cryptography 9](/cards/CR9)
 
-### Cornucopia
+#### Cornucopia
 - [Cornucopia 6](/cards/C6)
 - [Cornucopia 8](/cards/C8)
 - [Cornucopia 10](/cards/CX)

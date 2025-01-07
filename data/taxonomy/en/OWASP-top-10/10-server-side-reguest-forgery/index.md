@@ -1,10 +1,10 @@
-# Server-Side Request Forgery (SSRF)
-## Description
+## Server-Side Request Forgery (SSRF)
+### Description
 SSRF flaws occur whenever a web application is fetching a remote resource without validating the user-supplied URL. It allows an attacker to coerce the application to send a crafted request to an unexpected destination, even when protected by a firewall, VPN, or another type of network access control list (ACL).
 
 As modern web applications provide end-users with convenient features, fetching a URL becomes a common scenario. As a result, the incidence of SSRF is increasing. Also, the severity of SSRF is becoming higher due to cloud services and the complexity of architectures.
 
-## How to Prevent
+### How to Prevent
 Developers can prevent SSRF by implementing some or all the following defense in depth controls:
 
 **From Network layer:**
@@ -29,29 +29,29 @@ Do not mitigate SSRF via the use of a deny list or regular expression. Attackers
 
 [Source: OWASP TOP 10 Server-Side Request Forgery (SSRF)](https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29/)
 
-## Cheatsheets
+### Cheatsheets
 [Server-Side Request Forgery (SSRF) Cheatcheats](https://cheatsheetseries.owasp.org/IndexTopTen.html#a102021-server-side-request-forgery-ssrf)
 
-## Cards
-### Data-validation-&-encoding
+### Cards
+#### Data-validation-&-encoding
 - [Data-validation-&-encoding 2](/cards/VE2)
 - [Data-validation-&-encoding 7](/cards/VE7)
 - [Data-validation-&-encoding Q](/cards/VEQ)
 
-### Session-management
+#### Session-management
 - [Session-management 4](/cards/SM4)
 - [Session-management 10](/cards/SMX)
 
-### Authorization
+#### Authorization
 - [Authorization 2](/cards/AZ2)
 - [Authorization 8](/cards/AZ8)
 - [Authorization 9](/cards/AZ9)
 
-### Cryptography
+#### Cryptography
 - [Cryptography 7](/cards/CR7)
 - [Cryptography J](/cards/CRJ)
 
-### Cornucopia
+#### Cornucopia
 - [Cornucopia 3](/cards/C3)
 - [Cornucopia 5](/cards/C5)
 - [Cornucopia Q](/cards/CQ)

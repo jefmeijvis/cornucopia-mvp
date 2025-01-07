@@ -5,11 +5,11 @@
     import WebAppCardMapping from "./webAppCardMapping.svelte";
     export let card : Card = {} as Card;
     export let mapping : any;
-    export let hero : string = '';
-    let heroStyle = '';
+    export let style : string = '';
+    let previewStyle = '';
 
-    if (hero == 'yes') {
-        heroStyle = ' hero-card-container';
+    if (style) {
+        previewStyle = ' ' + style;
     }
 
     function getSuitColor(suit : string)
@@ -20,25 +20,25 @@
 
 <div class="card-render">
     <div class="left" style="background-color:{getSuitColor(card.suit)}">
-        <span class="property-card-suit{heroStyle}">{card?.suitName}</span>
+        <span class="property-card-suit{previewStyle}">{card?.suitName}</span>
     </div>
     <div class="right">
         
         {#if mapping}
-        <span style="color:{getSuitColor(card.suit)}" class="property-card-number">{card?.card ?? card?.value}</span>
-        <p class="property-card-description{heroStyle}">{card.desc}</p>
+        <span style="color:{getSuitColor(card.suit)}" class="property-card-number{previewStyle}">{card?.card ?? card?.value}</span>
+        <p class="property-card-description{previewStyle}">{card.desc}</p>
             {#if card.edition == 'webapp' && card.value != 'A' && card.value != 'B'}
-                <WebAppCardMapping {mapping} {hero}></WebAppCardMapping>
+                <WebAppCardMapping {mapping} {style}></WebAppCardMapping>
             {/if}
             {#if card.edition == 'mobileapp' && card.value != 'A' && card.value != 'B'}
-                <MobileAppCardMapping {mapping}></MobileAppCardMapping>
+                <MobileAppCardMapping {mapping}  {style}></MobileAppCardMapping>
             {/if}
         {:else if card.suitName == 'WILD CARD' }
         <h1 style="color:{getSuitColor(card.suit)}" class="property-card-number">Joker</h1>
-        <p class="property-card-description{heroStyle}">{card.desc}</p>
+        <p class="property-card-description{previewStyle}">{card.desc}</p>
         {:else}
         <h1 style="color:{getSuitColor(card.suit)}" class="property-card-number">{card?.value}</h1>
-        <p class="property-card-description{heroStyle}">{card.desc}</p>
+        <p class="property-card-description{previewStyle}">{card.desc}</p>
         {/if}
     </div>
 </div>
@@ -54,7 +54,7 @@
         transform: rotate(90deg);
         text-orientation: mixed;
         font-size: max(1.5vh, 1.8vw);
-        padding-top: .70rem;
+        padding-top: 1vw;
         font-weight: bold;
         padding-left: 1rem;
         width: 100%;
@@ -76,13 +76,29 @@
         font-weight: bold;
         font-size: max(3vw,5vh);
     }
+
+    .property-card-suit.preview-card-container
+    {
+        font-size: 1.8vw;
+    }
+
+    .property-card-description.preview-card-container
+    {
+        font-size: 1.3vw;
+    }
+
+    .property-card-number.preview-card-container
+    {
+        font-size: 5vw;
+    }
+
     .card-render
     {
         overflow: hidden;
         display: flex;
         width : 100%;
         aspect-ratio: 20/32;
-        border-radius: 1.2rem;
+        border-radius: 0.62vw;
         background-position: 50% 50%;
         background-size: 117%;
         transition: var(--transition);
@@ -111,4 +127,32 @@
     {
         width: 85%;
     }
+
+    @media (max-aspect-ratio: 1.5/1)
+    {
+        .card-render
+        {
+           
+        }
+
+        .property-card-description.browser-card-container
+        {
+            font-size: 3.5vw;
+            padding: .25rem;
+        }
+
+        .property-card-suit.browser-card-container
+        {
+            font-size: 3.5vw;
+            padding-top: 8vw;
+            padding-left: 8vw;
+
+        }
+        .property-card-number.browser-card-container
+        {
+            font-size: 10vw;
+        }
+    }
+
+
 </style>

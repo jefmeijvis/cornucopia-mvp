@@ -1,6 +1,6 @@
-#  MASTG-TEST-0078
+##  MASTG-TEST-0078
 
-## Determining Whether Native Methods Are Exposed Through WebViews
+### Determining Whether Native Methods Are Exposed Through WebViews
 
 Verify that no sensitive data is accessible and exposed to the WebView through native methods or bridges.
 

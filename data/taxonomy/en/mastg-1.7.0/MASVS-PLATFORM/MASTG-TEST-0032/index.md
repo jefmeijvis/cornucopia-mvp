@@ -1,6 +1,6 @@
-#  MASTG-TEST-0032
+##  MASTG-TEST-0032
 
-## Testing WebView Protocol Handlers
+### Testing WebView Protocol Handlers
 
 Determine whether the WebView should have resource access. If resource access is necessary, you need to verify that it's implemented following best practices.
 

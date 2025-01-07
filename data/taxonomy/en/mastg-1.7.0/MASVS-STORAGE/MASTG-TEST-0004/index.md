@@ -1,6 +1,6 @@
-#  MASTG-TEST-0004
+##  MASTG-TEST-0004
 
-## Determining Whether Sensitive Data Is Shared with Third Parties via Embedded Services
+### Determining Whether Sensitive Data Is Shared with Third Parties via Embedded Services
 
 Verify that sensitive data isn't leaked through third-party libraries/services.
 

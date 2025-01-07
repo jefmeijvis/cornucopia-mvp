@@ -1,6 +1,6 @@
-#  MASTG-TEST-0018
+##  MASTG-TEST-0018
 
-## Testing Biometric Authentication
+### Testing Biometric Authentication
 
 Verify that the biometric authentication is configured and implemented correctly. Be wary of vendor/third party SDKs used during authentication.
 

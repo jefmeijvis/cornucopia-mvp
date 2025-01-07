@@ -1,6 +1,6 @@
-#  MASTG-TEST-0093
+##  MASTG-TEST-0093
 
-## Testing Obfuscation
+### Testing Obfuscation
 
 Verify that the code obfuscation is strong enough according to what is recommended or the perceived effort of a potential attacker to mitigate against the risk of sensitive data exfiltration.
 

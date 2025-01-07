@@ -1,6 +1,6 @@
-#  MASTG-TEST-0002
+##  MASTG-TEST-0002
 
-## Testing Local Storage for Input Validation
+### Testing Local Storage for Input Validation
 
 For any publicly accessible data storage, any process can override the data. Verify that input validation is applied the moment the data is read back again.
 
