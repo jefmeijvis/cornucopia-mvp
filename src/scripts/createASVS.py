@@ -5,7 +5,7 @@ from os import walk
 import json
 import os 
 
-mypath = "../../data/taxonomy/en/ASVS-4.0.3"
+mypath = "../../data/taxonomy/en/asvs-4.0.3"
 
 
 
@@ -66,7 +66,7 @@ def main():
                 f.write("Level 3 required: " + str(subitem["L3"]["Required"]) + "\r\n")
                 shortcode = subitem["Shortcode"]
                 description = subitem["Description"]
-                link = f"/taxonomy/ASVS-4.0.3/{name}/{itemname}#{shortcode}"
+                link = f"/taxonomy/asvs-4.0.3/{name}/{itemname}#{shortcode}"
                 obj = {
                     'topic'  : name,
                     'cat'  : itemname,
