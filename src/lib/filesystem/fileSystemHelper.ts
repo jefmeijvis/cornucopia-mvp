@@ -42,7 +42,7 @@ export class FileSystemHelper {
         const secondPart = secondLevelDir.match(sectionRegex)?.[1];
         const section = `${firstPart}.${secondPart}`;
         let fullPath = firstLevelPath + '/' + secondLevelDir;
-        fullPath = fullPath.replace("data/taxonomy/en", "/Taxonomy");
+        fullPath = fullPath.replace("data/taxonomy/en", "/taxonomy");
 
         routes.push({
           Path: fullPath,
@@ -75,7 +75,7 @@ export class FileSystemHelper {
         const secondPart = secondLevelDir.match(sectionRegex)?.[1];
         const section = `${firstPart}.${secondPart}`;
         let fullPath = firstLevelPath + '/' + secondLevelDir;
-        fullPath = fullPath.replace("data/taxonomy/en", "/Taxonomy");
+        fullPath = fullPath.replace("data/taxonomy/en", "/taxonomy");
 
         routes.push({
           Path: fullPath,
@@ -108,7 +108,7 @@ export class FileSystemHelper {
         const secondPart = secondLevelDir.match(sectionRegex)?.[1];
         const section = `${firstPart}.${secondPart}`;
         let fullPath = firstLevelPath + '/' + secondLevelDir;
-        fullPath = fullPath.replace("data/taxonomy/en", "/Taxonomy");
+        fullPath = fullPath.replace("data/taxonomy/en", "/taxonomy");
 
         routes.push({
           Path: fullPath,
