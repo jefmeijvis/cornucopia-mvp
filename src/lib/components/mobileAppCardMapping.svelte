@@ -1,5 +1,9 @@
 <script lang="ts">
-    export let mapping : any;
+    interface Props {
+        mapping: any;
+    }
+
+    let { mapping }: Props = $props();
 
 </script>
         <p class="mapping-title">OWASP ASVS</p>

@@ -3,10 +3,14 @@
     import { cardColor } from "../../domain/card/cardColor";
     import MobileAppCardMapping from "./mobileAppCardMapping.svelte";
     import WebAppCardMapping from "./webAppCardMapping.svelte";
-    export let card : Card = {} as Card;
-    export let mapping : any;
-    export let hero : string = '';
-    let heroStyle = '';
+    interface Props {
+        card?: Card;
+        mapping: any;
+        hero?: string;
+    }
+
+    let { card = $bindable(), mapping, hero = '' }: Props = $props();
+    let heroStyle = $state('');
 
     if (hero == 'yes') {
         heroStyle = ' hero-card-container';
@@ -33,7 +37,7 @@
             {#if card.edition == 'mobileapp' && card.value != 'A' && card.value != 'B'}
                 <MobileAppCardMapping {mapping}></MobileAppCardMapping>
             {/if}
-        {:else if card.suitName == 'WILD CARD' }
+        {:else if card.suitName == 'WILD CARD'}
         <h1 style="color:{getSuitColor(card.suit)}" class="property-card-number">Joker</h1>
         <p class="property-card-description{heroStyle}">{card.desc}</p>
         {:else}

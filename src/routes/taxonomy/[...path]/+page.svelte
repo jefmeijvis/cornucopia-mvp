@@ -1,10 +1,11 @@
 <script>
-    export let data;
     import { Text } from '$lib/utils/text';
     import SvelteMarkdown from 'svelte-markdown'
     import renderers from '$lib/components/renderers/renderers';
     import ViewSourceOnGithub from "$lib/components/viewSourceOnGithub.svelte"
     import Utterances from "$lib/components/utterances.svelte"
+    /** @type {{data: any}} */
+    let { data } = $props();
 </script>
 <div>
 <!--The location is a file -->

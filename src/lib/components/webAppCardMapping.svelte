@@ -1,7 +1,11 @@
 <script lang="ts">
-    export let mapping : any;
-    export let hero : string = '';
-    let heroStyle = '';
+    interface Props {
+        mapping: any;
+        hero?: string;
+    }
+
+    let { mapping, hero = '' }: Props = $props();
+    let heroStyle = $state('');
 
     if (hero == 'yes') {
         heroStyle = ' hero-card-container';
