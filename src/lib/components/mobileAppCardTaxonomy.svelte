@@ -27,7 +27,7 @@
       let result: Route | undefined = ASVSRoutes.find(
         (route) => route.Section === searchString
       );
-      return result ? result.Path + "#V" + input : "";
+      return result ? result.Path.toLowerCase() + "#V" + input : "";
     }
   
     function FormatToDoubleDigitSearchstring(input: string) {
