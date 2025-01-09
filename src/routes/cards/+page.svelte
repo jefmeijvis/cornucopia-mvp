@@ -153,7 +153,7 @@
             {/if}
         </div>
         <div class="preview-container">
-                <CardPreview {card} {mapping}></CardPreview>
+                <CardPreview {card} {mapping} style="preview-card-container"></CardPreview>
         </div>
     </div>
 </div>

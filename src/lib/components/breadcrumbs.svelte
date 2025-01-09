@@ -25,7 +25,7 @@
         if(input == '')
             return 'Home'
         else
-            return Text.Format(input);
+            return Text.FormatPlain(input);
     }
     
 </script>

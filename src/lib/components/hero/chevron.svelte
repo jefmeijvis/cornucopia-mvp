@@ -19,17 +19,15 @@
     #chevron
     {
         transform: rotate(180deg);
-        position: absolute;
+        position: sticky;
         display: block;
-        width : 20vw;
         height : 6vw;
-        left: calc(50% - 16vw);
-        top: calc(100% - 20vh);
-        bottom:-3rem;
+        margin-right: 42vw;
+        top: calc(80% - 20vh);
+        /*bottom:-3rem;*/
         cursor:pointer;
         transition: var(--transition);
         filter:invert();
-        padding: 1rem;
         z-index: 99;
     }
 
@@ -47,7 +45,9 @@
     {
         #chevron
         {
-            top: calc(80% - 15vh);
+            top: calc(70% - -20vh);
+            position: absolute;
+            left: calc(50% - 5vw);
         }
     }
 </style>
