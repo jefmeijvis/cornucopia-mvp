@@ -3,11 +3,12 @@
     import SvelteMarkdown from 'svelte-markdown'
     import renderers from '$lib/components/renderers/renderers';
     import ViewSourceOnGithub from "$lib/components/viewSourceOnGithub.svelte"
-    import Utterances from "$lib/components/utterances.svelte"
     /** @type {{data: any}} */
     let { data } = $props();
 </script>
+{#if data.folders.length != 0 }
 <h1 class="clickable" id="{data.title}">{Text.Format(data.title)}</h1>
+{/if}
 <div>
 <!--The location is a file -->
 {#each data.files as file}
@@ -23,7 +24,6 @@
 {#if data.content && data.content != ''}
     <SvelteMarkdown {renderers} source={data.content}></SvelteMarkdown>
     <ViewSourceOnGithub path={'./data/taxonomy/' + data.path + '/index.md'} ></ViewSourceOnGithub>
-    <Utterances name={data.path} ></Utterances>
 {/if}
 </div>
 <style>
