@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { base } from '$app/paths';
     import { onMount } from "svelte";
     import renderers from '$lib/components/renderers/renderers';
     import SvelteMarkdown from "svelte-markdown";
@@ -58,11 +59,11 @@
     </div>
     <p class="footer">OWASP and the OWASP logo are trademarks of the <a class="link-with-external-indicator" rel="noopener" href="https://owasp.org/">OWASP Foundation</a></p>
     <p class="footer">Last update was {getCurrentDate()}{timeAgo}</p>
-    <p class="footer"><a href="/about#License">Licensing information</a> | <a href="/about#Acknowledgements">Acknowledgements</a> | <a href="/questionsandanswers">Q & A</a> | <a href="/roadmap">Roadmap</a></p>
+    <p class="footer"><a href="{base}/about#License">Licensing information</a> | <a href="{base}/about#Acknowledgements">Acknowledgements</a> | <a href="{base}/questionsandanswers">Q & A</a> | <a href="{base}/roadmap">Roadmap</a></p>
     <p class="footer">
         <a class="link-with-external-indicator" rel="noopener" href="https://owasp.org/">© OWASP Foundation</a> 
         <span> {new Date().getFullYear()} </span>
-        <a class="link-with-external-indicator" href="/rss.xml"><img class="rss" height="15px" src="/images/rss.svg" alt="rss" /></a>
+        <a class="link-with-external-indicator" href="{base}/rss.xml"><img class="rss" height="15px" src="{base}/images/rss.svg" alt="rss" /></a>
         <span> | </span>
         <a class="link-with-external-indicator" href="https://cornucopia.dotnetlab.eu/sitemap.xml">Sitemap</a>
     </p>

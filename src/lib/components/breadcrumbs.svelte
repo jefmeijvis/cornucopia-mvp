@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { base } from '$app/paths';
     import { run } from 'svelte/legacy';
 
     import { page } from "$app/stores";
@@ -12,7 +13,7 @@
 
     function generateHref(index : number, input : string) : string
     {
-        let result = "";
+        let result = '';
         for(let i = 0 ; i < index + 1 ; i++)
         {
             result += parts[i] + '/';
@@ -27,19 +28,26 @@
         else
             return Text.FormatPlain(input);
     }
-    
+
+    function isBase(path : string)
+    {
+        // Add exceptions for page that need to be shown full page width
+        if(path ==  base + '/')
+            return true;
+        return false;
+    }
 </script>
 
-{#if $page.url.pathname != '/'}
+{#if !isBase($page.url.pathname) }
     <p id="breadcrumbs">
         {#each parts as part,index}
-            {#if index != 0}
+            {#if index != 0 && `/${part}`.replace(base, '') !== '' }
                 <span>{'>'} </span>
             {/if}
 
             {#if parts[index-1] && parts[index-1] == 'cards'}
                 <a class="card-code" href="{generateHref(index,part)}">{generateName(index,part)}</a>
-            {:else}
+            {:else if `/${part}`.replace(base, '') !== '' }
                 <a href="{generateHref(index,part)}">{generateName(index,part)}</a>
             {/if}
             <span> </span>

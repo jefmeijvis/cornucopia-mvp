@@ -3,7 +3,7 @@
     import Deck from "../deck/deck.svelte";
     import Chevron from "./chevron.svelte";
     import HeroText from "./heroText.svelte";
-
+    import { base } from '$app/paths';
     interface Props {
         suits: Suit[];
         cards: any;
@@ -20,7 +20,7 @@
     <div class="card-container">
         <Deck {cards} {suits} {mapping}></Deck>
     </div>
-    <Chevron href="/#top"></Chevron>
+    <Chevron href="#top"></Chevron>
 </div>
 
 

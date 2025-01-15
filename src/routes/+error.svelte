@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { base } from '$app/paths';
     import { browser } from "$app/environment";
     import { goto } from "$app/navigation";
     import { onDestroy } from "svelte";
@@ -41,7 +42,7 @@
 <div class="error-message">
     <p>Oops, something went wrong!</p>
     {#if !isLocalDev()}
-        <p>Returning to <a href="/">landing page</a> in {Math.floor(timer/1000.0)} seconds.</p>
+        <p>Returning to <a href="{base}">landing page</a> in {Math.floor(timer/1000.0)} seconds.</p>
     {/if}
 </div>
 

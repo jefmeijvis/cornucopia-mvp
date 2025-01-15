@@ -31,7 +31,7 @@ if (JSON.stringify(process.env.VERCEL_ENV) == 'preview') {
 		}
 	};
 }
-const dev = process.env.NODE_ENV === 'development';
+const github = process.env.NODE_ENV === 'github';
 export default {
 	preprocess: vitePreprocess(),
 	trailingSlash: 'always',
@@ -47,7 +47,7 @@ export default {
 		}),
 		//adapter: adapter(),
 		paths: {
-			base: dev ? '' : '/cornucopia-mvp'
+			base: !github ? '' : '/cornucopia-mvp'
 		},
 		alias: {
 			$data: "data",

@@ -1,4 +1,5 @@
 <script>
+    import { base } from '$app/paths';
     import { Text } from "$lib/utils/text";
     import {readLang, readTranslation} from "$lib/stores/stores";
     import renderers from '$lib/components/renderers/renderers';
@@ -14,7 +15,7 @@
     <SvelteMarkdown {renderers} source={content}></SvelteMarkdown>
 {/if}
 {#each data.categories as category}
-    <p>├──<a href="/taxonomy/{category.toLowerCase()}">{Text.Format(category)}</a></p>
+    <p>├──<a href="{base}/taxonomy/{category.toLowerCase()}">{Text.Format(category)}</a></p>
 {/each}
 </div>
 <style>
