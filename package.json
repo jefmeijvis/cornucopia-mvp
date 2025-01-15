@@ -5,8 +5,8 @@
 	"scripts": {
 		"dev": "vite dev",
 		"prebuild": "echo I run before the build script",
-		"productionbuild": "vite build && node ./script/headers.js && npx svelte-sitemap --out-dir .vercel/output/static --domain https://cornucopia.owasp.org",
-		"build": "vite build && node ./script/headers.js && npx svelte-sitemap --domain https://cornucopia.owasp.org",
+		"productionbuild": "vite build && npx svelte-sitemap --out-dir .vercel/output/static --domain https://cornucopia.owasp.org",
+		"build": "vite build && npx svelte-sitemap --domain https://cornucopia.owasp.org",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
@@ -21,6 +21,7 @@
 		"@types/node": "^20.17.12",
 		"@vitest/coverage-v8": "^2.1.8",
 		"dotenv": "^16.4.7",
+		"netlify-plugin-csp-generator": "^1.6.1",
 		"svelte": "^5.16.5",
 		"svelte-check": "^4.1.1",
 		"svelte-sitemap": "^2.7.0",

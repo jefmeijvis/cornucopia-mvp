@@ -31,12 +31,24 @@ if (JSON.stringify(process.env.VERCEL_ENV) == 'preview') {
 		}
 	};
 }
-
+const dev = process.env.NODE_ENV === 'development';
 export default {
 	preprocess: vitePreprocess(),
+	trailingSlash: 'always',
+	
 	kit: 
 	{
-		adapter: adapter({fallback: 'index.html'}),
+		adapter: adapter({
+			fallback: '404.html',
+			precompress: false,
+			fallback: null,
+			assets: 'build',
+			pages: 'build'
+		}),
+		//adapter: adapter(),
+		paths: {
+			base: dev ? '' : process.env.BASE_PATH
+		},
 		alias: {
 			$data: "data",
 		},
@@ -52,11 +64,13 @@ export default {
 			 if (id == 'card') return;
 			 throw new Error(message);
 			},
+			
 		},
 		
 		csp: csp,
 		csrf: {
 			checkOrigin: true
-		}
+		},
+		
 	}
 };
