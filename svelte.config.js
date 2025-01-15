@@ -47,7 +47,7 @@ export default {
 		}),
 		//adapter: adapter(),
 		paths: {
-			base: dev ? '' : process.env.BASE_PATH
+			base: dev ? '' : 'cornucopia-mvp'
 		},
 		alias: {
 			$data: "data",
