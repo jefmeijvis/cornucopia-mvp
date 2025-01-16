@@ -39,9 +39,7 @@ export default {
 	kit: 
 	{
 		adapter: adapter({
-			fallback: '404.html',
-			precompress: false,
-			pages: 'build'
+			precompress: false
 		}),
 		//adapter: adapter(),
 		paths: {
