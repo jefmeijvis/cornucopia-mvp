@@ -41,7 +41,6 @@ export default {
 		adapter: adapter({
 			fallback: '404.html',
 			precompress: false,
-			assets: 'build',
 			pages: 'build'
 		}),
 		//adapter: adapter(),
