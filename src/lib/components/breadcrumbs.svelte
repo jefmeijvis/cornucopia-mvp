@@ -18,7 +18,7 @@
         {
             result += parts[i] + '/';
         }
-        return result;
+        return result.replace('//', '/');
     }
 
     function generateName(index : number, input : string)
@@ -31,8 +31,7 @@
 
     function isBase(path : string)
     {
-        // Add exceptions for page that need to be shown full page width
-        if(path.replace('../', '').replace('//','') == base || base == '..')
+        if(path ==  base + '/' || base == '.' || base == path.replace('../', '') || path.includes('//'))
             return true;
         return false;
     }

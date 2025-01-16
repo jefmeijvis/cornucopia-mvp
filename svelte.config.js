@@ -41,7 +41,6 @@ export default {
 		adapter: adapter({
 			fallback: '404.html',
 			precompress: false,
-			fallback: null,
 			assets: 'build',
 			pages: 'build'
 		}),
@@ -65,7 +64,7 @@ export default {
 				console.log('path: ');
 				console.log(path);
 				// otherwise fail the build
-				//throw new Error(message);
+				throw new Error(message);
 			},
 			handleMissingId: ({ path, id, referrers, message }) => {
 			 if (id == 'card') return;

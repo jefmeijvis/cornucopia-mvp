@@ -12,10 +12,10 @@
   let { href = $bindable(''), title = $bindable(""), text = $bindable('') }: Props = $props();
     let url: string;
     const getUrl = () => {
-        let pathname = '';
-        if (!$page.url.pathname.startsWith('/news')) pathname = $page.url.pathname.split('/').slice(2).join('/') + '/' + href;
+        let pathname = $page.url.pathname;
+        if (!$page.url.pathname.startsWith('/news')) pathname = '/' + pathname.split('/').slice(2).join('/');
     
-        return base + '/data/' + pathname;
+        return base + '/data' + pathname + '/' + href;
     };
 
     // Using /static allows autocomplete in VS code somehow, but breaks the image linking
