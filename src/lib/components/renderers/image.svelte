@@ -1,5 +1,7 @@
 <script lang="ts">
     import { page } from "$app/stores";
+    import { base } from "$app/paths";
+
 
   interface Props {
     href?: string;
@@ -8,11 +10,21 @@
   }
 
   let { href = $bindable(''), title = $bindable(""), text = $bindable('') }: Props = $props();
-
-    let url : string = '/data' + $page.url.pathname + '/' + href
+    let url: string;
+    const getUrl = () => {
+        let pathname = '';
+        if (!$page.url.pathname.startsWith('/news')) pathname = $page.url.pathname.split('/').slice(2).join('/') + '/' + href;
+    
+        return base + '/data/' + pathname;
+    };
 
     // Using /static allows autocomplete in VS code somehow, but breaks the image linking
     // So I just remove it before applying the href property of the img tag.
+    if(text.includes("[blog]"))
+    {
+    }
+    
+    
     if(href.includes("/static"))
         href = href.replace("/static","");
 
@@ -46,9 +58,10 @@
     }
 
   </script>
-  
-  <img loading="lazy" class="{getStyle()}" src={url} {title} alt={text}>
-  <p class="alt-text"><i>Image: {text}</i></p>
+
+  <img loading="lazy" class="{getStyle()}" src={getUrl()} {title} alt={text}/>
+
+  <span class="alt-text"><i>Image: {text}</i></span>
 
   <style>
         .alt-text
@@ -57,6 +70,7 @@
             font-size: 1rem;
             text-align: center;
             margin-bottom: 2rem;
+            display: block;
         }
 
         img

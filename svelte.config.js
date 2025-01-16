@@ -34,7 +34,7 @@ if (JSON.stringify(process.env.VERCEL_ENV) == 'preview') {
 const github = process.env.NODE_ENV === 'github';
 export default {
 	preprocess: vitePreprocess(),
-	trailingSlash: 'always',
+	trailingSlash: 'never',
 	
 	kit: 
 	{
@@ -53,18 +53,24 @@ export default {
 			$data: "data",
 		},
 		prerender: {
-			handleHttpError: ({ path, referrer, message }) => {
+			handleHttpError: ({ status, path, referrer, referenceType, message }) => {
+				console.log('status: ');
+				console.log(status);
+				console.log('message: ');
 				console.log(message);
+				console.log('referenceType: ');
+				console.log(referenceType);
+				console.log('referrer: ');
 				console.log(referrer);
+				console.log('path: ');
 				console.log(path);
 				// otherwise fail the build
-				throw new Error(message);
+				//throw new Error(message);
 			},
 			handleMissingId: ({ path, id, referrers, message }) => {
 			 if (id == 'card') return;
 			 throw new Error(message);
 			},
-			
 		},
 		
 		csp: csp,

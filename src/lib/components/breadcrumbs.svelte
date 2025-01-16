@@ -32,7 +32,7 @@
     function isBase(path : string)
     {
         // Add exceptions for page that need to be shown full page width
-        if(path ==  base + '/')
+        if(path.replace('../', '').replace('//','') == base || base == '..')
             return true;
         return false;
     }
@@ -41,13 +41,15 @@
 {#if !isBase($page.url.pathname) }
     <p id="breadcrumbs">
         {#each parts as part,index}
-            {#if index != 0 && `/${part}`.replace(base, '') !== '' }
+            {#if index != 0 && !isBase(`/${part}`) }
                 <span>{'>'} </span>
             {/if}
 
-            {#if parts[index-1] && parts[index-1] == 'cards'}
+            {#if index == 0 }
+                <a href="{base + generateHref(index,part)}">{generateName(index,part)}</a>
+            {:else if parts[index-1] && parts[index-1] == 'cards'}
                 <a class="card-code" href="{generateHref(index,part)}">{generateName(index,part)}</a>
-            {:else if `/${part}`.replace(base, '') !== '' }
+            {:else if `/${part}`.replace(base+base, base) !== '' && !isBase(`/${part}`) }
                 <a href="{generateHref(index,part)}">{generateName(index,part)}</a>
             {/if}
             <span> </span>

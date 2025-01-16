@@ -9,7 +9,7 @@
     let height: number = $state();
 
     let mainMenu : Link[] = [];
-    AddLink(mainMenu,$t('home.title'),`${base}`);
+    AddLink(mainMenu,$t('home.title'),`${base}/`);
     AddLink(mainMenu,$t('play.title'),`${base}/how-to-play`);
     AddLink(mainMenu,$t('cards.title'),`${base}/cards`);
     AddLink(mainMenu,$t('taxonomy.title'),`${base}/taxonomy`);
@@ -69,7 +69,7 @@
                     </div>
                 </li>
             </ul>
-        <a class="logo" href="{base}"><div><span class="desktop">OWASP</span>&nbsp;<span class="desktop mobile">Cornucopia</span></div></a>
+        <a class="logo" href="{base}/"><div><span class="desktop">OWASP</span>&nbsp;<span class="desktop mobile">Cornucopia</span></div></a>
         
     </nav>
 </header>

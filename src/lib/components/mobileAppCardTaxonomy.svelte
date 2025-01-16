@@ -1,6 +1,6 @@
 <script lang="ts">
   import { run } from 'svelte/legacy';
-
+    import { base } from '$app/paths';
     import {
       GetCardAttacks, type Attack } from "$lib/cardAttacks";
     import MASVSOverview from "$lib/components/MASVSOverview.svelte";
@@ -25,13 +25,13 @@
     function linkMASVS(requirement: string) {
       let parts = String(requirement).split("-");
       let category = 'MASVS-' + parts[0];
-      let base = '/taxonomy/masvs-2.1.0/';
-      return category ? (base + category.toLowerCase() + '/masvs-' + requirement.toLowerCase() + '#MASVS-' + requirement) : '';
+      let basepath = base + '/taxonomy/masvs-2.1.0/';
+      return category ? (basepath + category.toLowerCase() + '/masvs-' + requirement.toLowerCase() + '#MASVS-' + requirement) : '';
     }
 
     function linkMASTG(test: string) {
-      let base = '/taxonomy/mastg-1.7.0/masvs-';
-      return test in MASTG_TESTS_MAPPING ? (base + MASTG_TESTS_MAPPING[test].toLowerCase() + '/mastg-' + test.toLowerCase() + '#MASTG-' + test) : '';
+      let basepath = base + '/taxonomy/mastg-1.7.0/masvs-';
+      return test in MASTG_TESTS_MAPPING ? (basepath + MASTG_TESTS_MAPPING[test].toLowerCase() + '/mastg-' + test.toLowerCase() + '#MASTG-' + test) : '';
     }
   
     function FormatToDoubleDigitSearchstring(input: string) {
