@@ -63,15 +63,15 @@
         document.onkeydown = checkKey;
 </script>
 <noscript>
-    <div class="card-panel" id="card">
+    <div class="card-panel" id="card-face">
         <div class="left">
-            <a href={card.prevous + '/#card'} class="arrow" title="{$t('cards.cardBrowser.a1.title')}">{"<"}</a>
+            <a href={card.prevous + '/#card-face'} data-sveltekit-reload class="arrow" title="{$t('cards.cardBrowser.a1.title')}">{"<"}</a>
         </div>
         <div class="center">
             <CardPreview bind:card={card} mapping={mappingData} style='browser-card-container'></CardPreview>
         </div>
         <div class="right">
-            <a href={card.next + '/#card'} class="arrow" title="{$t('cards.cardBrowser.a2.title')}">{">"}</a>
+            <a href={card.next + '/#card-face'} data-sveltekit-reload class="arrow" title="{$t('cards.cardBrowser.a2.title')}">{">"}</a>
         </div>
     </div>
 </noscript>
@@ -138,11 +138,3 @@
         }
     }
 </style>
-<noscript>
-    <style>
-        .card-panel.script
-        {
-            display: none;
-        }
-    </style>
-</noscript>
