@@ -1,4 +1,5 @@
 <script>
+    import { base } from '$app/paths';
     import { Text } from "$lib/utils/text";
     import SvelteMarkdown from "svelte-markdown";
     /** @type {{data: any}} */
@@ -7,7 +8,7 @@
 <div>
 <div class="container">
     <div class="left">
-        <img class="profile-picture" title="{data.author.name}" alt="{data.author.name}" src="/data/author/{data.author.name}/profile-picture.jpg"/>
+        <img class="profile-picture" title="{data.author.name}" alt="{data.author.name}" src="{base}/data/author/{data.author.name}/profile-picture.jpg"/>
     </div>
     <div class="right">
         <table>
@@ -15,7 +16,7 @@
             {#if data.author.linkedin}
             <tr>
                 <td>
-                    <img alt="linkedin logo" class="icon" src="/icons/linkedin.png"/>
+                    <img alt="linkedin logo" class="icon" src="{base}/icons/linkedin.png"/>
                 </td>
                 <td>
                     <a target="_blank" rel="noopener" href="{data.author.linkedin}">LinkedIn</a>
@@ -26,7 +27,7 @@
             {#if data.author.email}
             <tr>
                 <td>
-                    <img alt="email logo" class="icon" src="/icons/mail.png"/>
+                    <img alt="email logo" class="icon" src="{base}/icons/mail.png"/>
                 </td>
                 <td>
                     <a target="_blank" rel="noopener" href="mailto:{data.author.email}">Mail</a>
@@ -37,7 +38,7 @@
             {#if data.author.website}
             <tr>
                 <td>
-                    <img alt="globe logo" class="icon" src="/icons/globe.png"/>
+                    <img alt="globe logo" class="icon" src="{base}/icons/globe.png"/>
                 </td>
                 <td>
                     <a target="_blank" rel="noopener" href="{data.author.website}">{Text.DisplayLink(data.author.website)}</a>
@@ -58,7 +59,7 @@
         <ul>
             {#each data.blogposts as blogpost}
                 <li>
-                    <a href="/news/{blogpost.path}">{Text.Format(blogpost.title)}</a>
+                    <a href="{base}/news/{blogpost.path}">{Text.Format(blogpost.title)}</a>
                 </li>
             {/each}
         </ul>

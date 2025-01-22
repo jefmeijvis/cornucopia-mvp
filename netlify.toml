@@ -1,0 +1,12 @@
+[[plugins]]
+package = "netlify-plugin-csp-generator"
+
+  [plugins.inputs]
+  buildDir = "build"
+
+  [plugins.inputs.policies]
+    defaultSrc = "'self'"
+    
+[build]
+  command = "npm run build"
+  publish = "build"

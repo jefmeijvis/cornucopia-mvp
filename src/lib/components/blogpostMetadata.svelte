@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { base } from '$app/paths';
     import { goto } from "$app/navigation";
     import { Text } from "$lib/utils/text";
     import type { Blogpost } from "../../domain/blogpost/blogpost";
@@ -9,7 +10,7 @@
 
     let { blogpost }: Props = $props();
 
-    let authorLink : string = '/author/' + blogpost.author;
+    let authorLink : string = base + '/author/' + blogpost.author;
 </script>
 
 <div class="metadata">
@@ -18,13 +19,13 @@
         <p>Author: <a href="{authorLink}">{Text.Format(blogpost.author)}</a></p>
         <p>Tags: 
             {#each blogpost.tags || [] as tag}
-            <a class="tag" href="/news">{Text.Format(tag)}</a><span></span>
+            <a class="tag" href="{base}/news">{Text.Format(tag)}</a><span></span>
             {/each}
         </p>
     </div>
     <div class="right">
         <button onclick={()=>goto(authorLink)}>
-        <img title="{Text.Format(blogpost.author)}" alt="{blogpost.author} profile picture" src="/data/author/{blogpost.author}/profile-picture.jpg"/>
+        <img title="{Text.Format(blogpost.author)}" alt="{blogpost.author} profile picture" src="{base}/data/author/{blogpost.author}/profile-picture.jpg"/>
         </button>
     </div>
 </div>

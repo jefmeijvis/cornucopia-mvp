@@ -1,13 +1,13 @@
 <script lang="ts">
     import {type Card} from "../../domain/card/card"
     interface Props {
-        card: Card;
+        card: '';
     }
 
     let { card }: Props = $props();
 </script>
 
-<p>Unknown card: {String(card.id).toUpperCase()} {card.suit}</p>
+<p>Unknown card: {String(card).toUpperCase()}</p>
 
 <style>
     p {

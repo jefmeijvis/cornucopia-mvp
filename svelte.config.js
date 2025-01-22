@@ -31,19 +31,34 @@ if (JSON.stringify(process.env.VERCEL_ENV) == 'preview') {
 		}
 	};
 }
-
+const github = process.env.NODE_ENV === 'github';
 export default {
 	preprocess: vitePreprocess(),
+	trailingSlash: 'never',
+	
 	kit: 
 	{
-		adapter: adapter(),
+		adapter: adapter({
+			precompress: false
+		}),
+		//adapter: adapter(),
+		paths: {
+			base: !github ? '' : '/cornucopia-mvp'
+		},
 		alias: {
 			$data: "data",
 		},
 		prerender: {
-			handleHttpError: ({ path, referrer, message }) => {
+			handleHttpError: ({ status, path, referrer, referenceType, message }) => {
+				console.log('status: ');
+				console.log(status);
+				console.log('message: ');
 				console.log(message);
+				console.log('referenceType: ');
+				console.log(referenceType);
+				console.log('referrer: ');
 				console.log(referrer);
+				console.log('path: ');
 				console.log(path);
 				// otherwise fail the build
 				throw new Error(message);
@@ -57,6 +72,7 @@ export default {
 		csp: csp,
 		csrf: {
 			checkOrigin: true
-		}
+		},
+		
 	}
 };

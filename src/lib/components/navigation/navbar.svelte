@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { base } from '$app/paths';
     import { goto } from "$app/navigation";
     import { fade } from "svelte/transition";
     import { AddLink, type Link } from "./utils";
@@ -8,18 +9,18 @@
     let height: number = $state();
 
     let mainMenu : Link[] = [];
-    AddLink(mainMenu,$t('home.title'),"/");
-    AddLink(mainMenu,$t('play.title'),"/how-to-play");
-    AddLink(mainMenu,$t('cards.title'),"/cards");
-    AddLink(mainMenu,$t('taxonomy.title'),"/taxonomy");
-    AddLink(mainMenu,$t('news.title'),"/news");
-    AddLink(mainMenu,$t('about.title'),"/about");
+    AddLink(mainMenu,$t('home.title'),`${base}/`);
+    AddLink(mainMenu,$t('play.title'),`${base}/how-to-play`);
+    AddLink(mainMenu,$t('cards.title'),`${base}/cards`);
+    AddLink(mainMenu,$t('taxonomy.title'),`${base}/taxonomy`);
+    AddLink(mainMenu,$t('news.title'),`${base}/news`);
+    AddLink(mainMenu,$t('about.title'),`${base}/about`);
     
     let subMenu : Link[] = [];
-    AddLink(subMenu,$t('source.title'),"/source");
-    AddLink(subMenu,$t('printing.title'),"/printing");
-    AddLink(subMenu,$t('swags.title'),"/swags");
-    AddLink(subMenu,$t('webshop.title'),"/webshop");
+    AddLink(subMenu,$t('source.title'),`${base}/source`);
+    AddLink(subMenu,$t('printing.title'),`${base}/printing`);
+    AddLink(subMenu,$t('swags.title'),`${base}/swags`);
+    AddLink(subMenu,$t('webshop.title'),`${base}/webshop`);
 
     function toggleMenu()
     {
@@ -68,7 +69,7 @@
                     </div>
                 </li>
             </ul>
-        <a class="logo" href="/"><div><span class="desktop">OWASP</span>&nbsp;<span class="desktop mobile">Cornucopia</span></div></a>
+        <a class="logo" href="{base}/"><div><span class="desktop">OWASP</span>&nbsp;<span class="desktop mobile">Cornucopia</span></div></a>
         
     </nav>
 </header>

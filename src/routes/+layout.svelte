@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { base } from '$app/paths';
     import 'normalize.css';
     import { browser } from "$app/environment";
     import { page } from "$app/stores";
@@ -21,7 +22,7 @@
     function getFullWidthPages(path : string)
     {
         // Add exceptions for page that need to be shown full page width
-        if(path == '/')
+        if(path ==  base + '/')
             return true;
         return false;
     }
@@ -101,6 +102,25 @@
         min-height: 100vh;
         margin : auto;
         padding-bottom: 1rem;
+    }
+
+    :global {
+        /* Add a 'external link' svg to all links that are external */
+        .link-with-external-indicator[href^="http"]:not([href*="cornucopia-mvp.vercel.app"]):not([href*="localhost"]):not([href^="/"]):after {
+            content: '';
+            display: inline-block;
+            margin-left: 0.2rem;
+            width: 1rem;
+            height: 1rem;
+            -webkit-mask: url('/icons/external-link.svg') no-repeat 50% 50%;
+            mask: url('/icons/external-link.svg') no-repeat 50% 50%;
+            -webkit-mask-size: cover;
+            mask-size: cover;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: currentColor; 
+        }
     }
 
     @media (max-aspect-ratio: 1/1)

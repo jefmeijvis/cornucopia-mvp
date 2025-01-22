@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { base } from '$app/paths';
     import { readTranslation } from "$lib/stores/stores";
   interface Props {
     attacks: any;
@@ -8,7 +9,7 @@
     let t = readTranslation();
   </script>
     {#each attacks as attack}
-      <p><a href="/taxonomy/attacks/{attack.url}">{attack.name}</a></p>
+      <p><a href="{base}/taxonomy/attacks/{attack.url}">{attack.name}</a></p>
     {:else}
       <p>{$t('cards.attacks.p1')}</p>
     {/each}

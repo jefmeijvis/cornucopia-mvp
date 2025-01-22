@@ -1,14 +1,14 @@
 <script lang="ts">
   import { run } from 'svelte/legacy';
-
-    import {
-      GetCardAttacks, type Attack } from "$lib/cardAttacks";
-    import ASVSOverview from "$lib/components/ASVSOverview.svelte";
-    import MappingsList from "$lib/components/mappingsList.svelte";
-    import type { Card } from "../../domain/card/card";
-    import type { Route } from "../../domain/routes/route";
-    import { MappingController, type WebAppMapping } from "../../domain/mapping/mappingController";
-    import { readTranslation } from "$lib/stores/stores";
+  import { base } from '$app/paths';
+  import {
+    GetCardAttacks, type Attack } from "$lib/cardAttacks";
+  import ASVSOverview from "$lib/components/ASVSOverview.svelte";
+  import MappingsList from "$lib/components/mappingsList.svelte";
+  import type { Card } from "../../domain/card/card";
+  import type { Route } from "../../domain/routes/route";
+  import { MappingController, type WebAppMapping } from "../../domain/mapping/mappingController";
+  import { readTranslation } from "$lib/stores/stores";
   interface Props {
     mappingData: any;
     card: Card;
@@ -25,7 +25,7 @@
       let result: Route | undefined = ASVSRoutes.find(
         (route) => route.Section === searchString
       );
-      return result ? result.Path.toLowerCase() + "#V" + input : "";
+      return result ? base + result.Path.toLowerCase() + "#V" + input : "";
     }
   
     function FormatToDoubleDigitSearchstring(input: string) {
@@ -77,7 +77,7 @@
     {/if}
     <h1 class="title">{$t('cards.webAppCardTaxonomy.h1.2')}</h1>
     {#each attacks || [] as attack}
-      <p><a href="/taxonomy/attacks/{attack.url}">{attack.name}</a></p>
+      <p><a href="{base}/taxonomy/attacks/{attack.url}">{attack.name}</a></p>
     {/each}
   
   <style>

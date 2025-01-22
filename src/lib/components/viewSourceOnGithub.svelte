@@ -1,13 +1,13 @@
 <script lang="ts">
-
-    let base : string = "https://github.com/OWASP/cornucopia/cornucopia.owasp.org/tree/master/data/cards/";
+    import { base } from '$app/paths';
+    let repo : string = "https://github.com/OWASP/cornucopia/cornucopia.owasp.org/tree/master/data/cards/";
     //@TODO Would it be possible to link directly to the card?
-    let href : string = base; //+ path;
+    let href : string = repo; //+ path;
 </script>
 
 <div>
     <a target="_blank" {href}>
-        <img alt="Github logo" src="/icons/github.png"/>
+        <img alt="Github logo" src="{base}/icons/github.png"/>
         <span>View source on GitHub</span>
     </a>
 </div>

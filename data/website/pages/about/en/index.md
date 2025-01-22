@@ -132,4 +132,4 @@ It is licensed under the Creative Commons Attribution-ShareAlike 3.0 license, so
 
 OWASP and the OWASP logo are trademarks of the OWASP Foundation
 
-<img alt="Logo of the OWASP foundation" src="/images/owasp-logo.png" width="500vw"/>
+<img alt="Logo of the OWASP foundation" src="images/owasp-logo.png" width="500vw"/>

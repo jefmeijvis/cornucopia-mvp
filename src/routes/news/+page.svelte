@@ -1,4 +1,5 @@
 <script>
+    import { base } from '$app/paths';
     import { goto } from '$app/navigation';
     import { Text } from '$lib/utils/text';
     import SvelteMarkdown from 'svelte-markdown';
@@ -21,13 +22,13 @@
 {:else}
     <div class="list">
         {#each data.posts as post}
-            <button title="View {Text.Format(post.path)}" onclick={()=>goto('/news/' + post.path)}>
+            <button title="View {Text.Format(post.path)}" onclick={()=>goto(`${base}/news/` + post.path)}>
                 <p class="title">{Text.Format(post.title)}</p>
                 <p class="info">
                     {Text.FormatDate(post.date)}
                      • 
                     {Text.Format(post.author)}
-                    <a href="/news/{post.path}">>> {$t('news.a')}</a>
+                    <a href="{base}/news/{post.path}">>> {$t('news.a')}</a>
                 </p>
             </button>
         {/each}
@@ -35,10 +36,10 @@
 {/if}
 
 
-<p>{$t('news.p2')} <a href="/author">{$t('news.slug.p1')}</a></p>
+<p>{$t('news.p2')} <a href="{base}/author">{$t('news.slug.p1')}</a></p>
 {#each data.authors as author}
     <p>
-        <a href="/author/{author.name}">{author.name}</a>
+        <a href="{base}/author/{author.name}">{author.name}</a>
     </p>
 {/each}
 </div>

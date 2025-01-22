@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { base } from '$app/paths';
     import SvelteMarkdown from 'svelte-markdown';
     import renderers from '$lib/components/renderers/renderers';
     import type { PageData } from "./$types";
@@ -105,7 +106,7 @@
 <div class="script">
     {#each webappSuits as suit}
         {#each suit.cards as card}
-            <p><a class="card hide" href="{cards?.get(card)?.url}">{suit.name} {card}</a></p>
+            <p><a class="card hide" href="{base}{cards?.get(card)?.url}">{suit.name} {card}</a></p>
         {/each}
     {/each}
 
@@ -132,7 +133,7 @@
                     {#if map?.get(suit.name)}
                         {#each suit.cards as card}
                             <p onmouseenter={()=>{enter(suit.name, cards?.get(card)?.id)}}>
-                                <a href="{cards?.get(card)?.url}">├── {cards?.get(card)?.id}</a>
+                                <a href="{base}{cards?.get(card)?.url}">├── {cards?.get(card)?.id}</a>
                             </p>
                         {/each}
                     {/if}
@@ -146,7 +147,7 @@
                     {#if map?.get(suit.name)}
                         {#each suit.cards as card}
                             <p onmouseenter={()=>{enter(suit.name,cards?.get(card)?.id)}}>
-                                <a href="{cards?.get(card)?.url}">├── {cards?.get(card)?.id}</a>
+                                <a href="{base}{cards?.get(card)?.url}">├── {cards?.get(card)?.id}</a>
                             </p>
                         {/each}
                     {/if}
@@ -173,7 +174,7 @@
                 <div class="card-buttons">
                 {#each suit.cards as card}
                     <p>
-                        <a href="cards/{cards?.get(card)?.id}">├── {cards?.get(card)?.id}</a>
+                        <a href="{base}/cards/{cards?.get(card)?.id}">├── {cards?.get(card)?.id}</a>
                     </p>
                 {/each}
                 </div>
@@ -194,7 +195,7 @@
                 <div class="card-buttons">
                 {#each suit.cards as card}
                     <p>
-                        <a href="cards/{cards?.get(card)?.id}">├── {cards?.get(card)?.id}</a>
+                        <a href="{base}/cards/{cards?.get(card)?.id}">├── {cards?.get(card)?.id}</a>
                     </p>
                 {/each}
                 </div>
