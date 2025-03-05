@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { base } from '$app/paths';
     interface Props {
         href: string;
     }
@@ -6,7 +7,7 @@
     let { href }: Props = $props();
 </script>
 <div id="chevron">
-    <a href="{href}"><img alt="go-down" src="icons/chevron.png"/></a>
+    <a href="{href}"><img alt="go-down" src="{base}/icons/chevron.png"/></a>
 </div>
 <style>   
 

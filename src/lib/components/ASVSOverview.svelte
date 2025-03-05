@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { base } from '$app/paths';
     import { json } from '@sveltejs/kit';
     import {data} from '$lib/parsed';
     import { readTranslation } from "$lib/stores/stores";

@@ -46,14 +46,14 @@
       "network-&-storage",
       "resilience",
     ]
-    return (cards_options.includes(String(card.id).toUpperCase()) && suits_options.includes(card.suitName.toLowerCase().replaceAll(' ', '-')))
+    return (card?.id && cards_options.includes(String(card.id).toUpperCase()) && suits_options.includes(card.suitName.toLowerCase().replaceAll(' ', '-')))
   }
 </script>
 <div>
 {#if cardFound()}
   <CardFound routes={data.routes} {cards} {card}  mappingData={data.mappingData.get(card.edition)} />
 {:else}
-  <CardNotFound {card} />
+  <CardNotFound card={data.card} />
 {/if}
 </div>
 <style>

@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { base } from '$app/paths';
     import Hero from "$lib/components/hero/hero.svelte";
     import Spacer from "$lib/components/spacer.svelte";
     import TextImage from "$lib/components/textImage.svelte";
@@ -23,7 +24,7 @@
 
 
 <Hero cards={data.cards} {suits} mapping={data.mappingData.get('webapp')}></Hero>
-<TextImage src="/images/cornucopia_logo_in_devs_we_trust.svg" align="right">
+<TextImage src="{base}/images/cornucopia_logo_in_devs_we_trust.svg" align="right">
     <span id="top">{$t('home.h1.1')}</span>
     <p>
         {$t('home.p1')}
@@ -31,26 +32,26 @@
     <p>
         {$t('home.p2')}
     </p>
-    <a href="/about" class="internal-links">➔ {$t('home.a1')}</a>
+    <a href="{base}/about" class="internal-links">➔ {$t('home.a1')}</a>
 </TextImage>
-<TextImage src="/images/cornucopia_logo_mobile_edition.svg" align="left">
+<TextImage src="{base}/images/cornucopia_logo_mobile_edition.svg" align="left">
 
     <span id="top">{$t('home.h1.2')}</span>
     <p>{$t('home.p3')}</p>
     <ol>
         <li>{@html $t('home.ol.li1')}</li>
-        <li>{@html $t('home.ol.li2')}<a href="/printing">{$t('home.ol.li2a')}</a>);</li>
+        <li>{@html $t('home.ol.li2')}<a href="{base}/printing">{$t('home.ol.li2a')}</a>);</li>
         <li>{@html $t('home.ol.li3')}<a rel="noopener" href="https://copi.owasp.org">copi.owasp.org</a>.</li>
         <li>{$t('home.ol.li4')}</li>
         <li>{$t('home.ol.li5')}</li>
         <li>{$t('home.ol.li6')}</li>
         <li>{$t('home.ol.li7')}</li>
-        <li><a href="/how-to-play">{$t('home.ol.li8a')}</a>{$t('home.ol.li8')}</li>
+        <li><a href="{base}/how-to-play">{$t('home.ol.li8a')}</a>{$t('home.ol.li8')}</li>
         <li>{$t('home.ol.li9')}</li>
     </ol>
-    <a href="/how-to-play" class="internal-links">➔ {$t('home.a2')}</a>
+    <a href="{base}/how-to-play" class="internal-links">➔ {$t('home.a2')}</a>
 </TextImage>
-<TextImage src="/images/opensource.png" align="right">
+<TextImage src="{base}/images/opensource.png" align="right">
     <span>{$t('home.h1.3')}</span>
     <p>{$t('home.p4.1')}<a rel="noopener" href="https://github.com/OWASP/cornucopia/releases/tag/v2.0.0">{$t('home.p4.2')}</a>.
     </p>

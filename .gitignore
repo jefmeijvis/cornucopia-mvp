@@ -12,5 +12,4 @@ vite.config.ts.timestamp-*
 /cache/*.cache
 .vs
 /.vs
-package-lock.json
 coverage/**

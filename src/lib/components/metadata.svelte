@@ -3,7 +3,7 @@
     let t = readTranslation();
 </script>
 <svelte:head>
-    <meta name="description" content="undefined">
+    <meta name="description" content="{$t('layout.description')}">
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://cornucopia.owasp.org/">
     <meta property="og:type" content="website">

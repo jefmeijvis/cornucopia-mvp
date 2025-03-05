@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { base } from '$app/paths';
     import { run } from 'svelte/legacy';
 
     import { page } from "$app/stores";
@@ -12,12 +13,12 @@
 
     function generateHref(index : number, input : string) : string
     {
-        let result = "";
+        let result = '';
         for(let i = 0 ; i < index + 1 ; i++)
         {
             result += parts[i] + '/';
         }
-        return result;
+        return result.replace('//', '/');
     }
 
     function generateName(index : number, input : string)
@@ -27,19 +28,27 @@
         else
             return Text.FormatPlain(input);
     }
-    
+
+    function isBase(path : string)
+    {
+        if(path ==  base + '/' || base == '.' || base == path.replace('../', '') || path.includes('//'))
+            return true;
+        return false;
+    }
 </script>
 
-{#if $page.url.pathname != '/'}
+{#if !isBase($page.url.pathname) }
     <p id="breadcrumbs">
         {#each parts as part,index}
-            {#if index != 0}
+            {#if index != 0 && !isBase(`/${part}`) }
                 <span>{'>'} </span>
             {/if}
 
-            {#if parts[index-1] && parts[index-1] == 'cards'}
+            {#if index == 0 }
+                <a href="{base + generateHref(index,part)}">{generateName(index,part)}</a>
+            {:else if parts[index-1] && parts[index-1] == 'cards'}
                 <a class="card-code" href="{generateHref(index,part)}">{generateName(index,part)}</a>
-            {:else}
+            {:else if `/${part}`.replace(base+base, base) !== '' && !isBase(`/${part}`) }
                 <a href="{generateHref(index,part)}">{generateName(index,part)}</a>
             {/if}
             <span> </span>

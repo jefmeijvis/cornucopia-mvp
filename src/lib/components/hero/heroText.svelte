@@ -1,7 +1,10 @@
+<script>
+    import { base } from '$app/paths';
+</script>
 <div class="hero-text">
     <h1>Threat modeling for everyone everywhere</h1>
     <h3>Uncover the security flaws in your software's design before the bad guys do it for you! Get your team together on a call or in a room and use OWASP Cornucopia Web & Mobile card decks to guide your threat modelling.</h3>
-    <img alt="OWASP Cornucopia" src="/images/cornucopia_logo_white.svg"/>
+    <img alt="OWASP Cornucopia" src="{base}/images/cornucopia_logo_white.svg"/>
 </div>
 
 <style>
